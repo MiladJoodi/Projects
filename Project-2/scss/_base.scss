@@ -1,0 +1,66 @@
+//colors
+$color-orange: #ffdb23;
+$color-white: white;
+$color-blue: #2998e7;
+$color-dark: #202839;
+$color-gray: #f5f8fb;
+
+// bg
+$bg-blue: linear-gradient(225deg, #2fa7f5 0%, #1d8cdd 100%);
+
+// font-size
+$fontSize18: 18px;
+$fontSize16: 1rem;
+$fontSize14: 0.875rem;
+$fontSize13: 0.8125rem;
+
+body {
+    font-size: 16px;
+    direction: rtl;
+    font-family: "behdad";
+    justify-content: center;
+    background-color: $color-gray;
+}
+.wrapper {
+    width: 100%;
+    // background-color: $color-white;
+
+    &-blue {
+        background: $bg-blue;
+    }
+    
+    &-white{
+    background-color: #fff;
+    }
+}
+.wrapper-dark {
+        background-color: #20282f;
+        color: #fff;
+        display: grid;
+
+}
+
+.container {
+    max-width: 1600px;
+    width: 100%;
+    margin: 0 auto;
+    overflow: hidden;
+    display: grid;
+}
+.bg-gray {
+    background-color: $color-gray;
+}
+.bg-white {
+    background-color: $color-white;
+}
+.search-inputs {
+    font-family: "behdad";
+    cursor: pointer;
+    background-color: $color-gray;
+    outline: none;
+    border: none;
+
+    padding: 0 15px;
+    font-size: $fontSize14;
+    color: rgba($color-dark, 0.8);
+}

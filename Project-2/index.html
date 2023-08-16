@@ -1,0 +1,583 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="js/persianumber.min.js"></script>
+    <script src="https://kit.fontawesome.com/ed9bc50f2e.js" crossorigin="anonymous"></script>
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Dosis:wght@200&display=swap" rel="stylesheet"> -->
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Yellowtail&display=swap" rel="stylesheet"> -->
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300&display=swap" rel="stylesheet">
+    <!-- <link href="https://fonts.googleapis.com/css2?family=Poiret+One&display=swap" rel="stylesheet"> -->
+    <link rel="stylesheet" href="http://cdn.font-store.ir/behdad.css">
+    <link rel="stylesheet" href="scss/reset.css">
+    <link rel="stylesheet" href="scss/main.css">
+    <title>My first real project</title>
+</head>
+
+<body>
+
+    <!-- start top nav -->
+    <div class="wrapper wrapper-white">
+        <section class="container bg-white">
+            <div class="top-menu">
+                <div class="top-menu-right">
+                    <ul class="top-menu-right-ul">
+                        <li class="top-menu-right-ul-li"><a href="#">پرسش و پاسخ</a></li>
+                        <li class="top-menu-right-ul-li"><a href="#">تماس با ما</a></li>
+                        <li class="top-menu-right-ul-li"><a href="#">درباره ما</a></li>
+                        <li class="top-menu-right-ul-li"><a href="#">اسپیکر و صوتی</a></li>
+                        <li class="top-menu-right-ul-li"><a href="#">تبلت و موبایل</a></li>
+                    </ul>
+                </div>
+
+                <div class="top-menu-left">
+                    <ul>
+                        <li><i class="fa-solid fa-phone-volume"></i> 09364699371</li>
+                        <li><i class="fa-solid fa-envelope"></i> winbeta.com@gmail.com</li>
+                    </ul>
+                </div>
+
+            </div>
+        </section>
+    </div>
+    <!-- end top nav -->
+
+    <!-- start top header -->
+    <div class="wrapper wrapper-white">
+        <section class="container bg-white">
+            <div class="searchBar">
+                <div class="logo">
+                    <img src="images/logo.PNG">
+                </div>
+
+                <form class="search-container">
+                    <select class="w3-select" name="option" id="option">
+                        <option class="input-value" value="" disabled selected>همه دسته بندی ها</option>
+                        <option value="1">موبایل</option>
+                        <option value="2">کامپیوتر</option>
+                        <option value="3">سخت افزار</option>
+                    </select>
+
+
+                    <input type="search" placeholder="جستجو" id="search-input">
+
+                    <input type="button" value="جستجو" id="search-btn">
+                </form>
+
+                <div class="searchBar-icons">
+                    <!-- item1 -->
+                    <a href="#" class="searchBar-icons-item">
+                        <i class="fa-solid fa-user icon"></i>
+                        <span class="searchBar-icons-item-title">حساب کاربری</span>
+                    </a>
+                    <!-- item1 -->
+                    <!-- item2 -->
+                    <a href="#" class="searchBar-icons-item">
+                        <i class="fa-solid fa-heart icon"></i>
+                        <span class="counterBadge">5</span>
+                        <span class="searchBar-icons-item-title">علاقه مندی ها</span>
+                    </a>
+                    <!-- item2 -->
+                    <!-- item3 -->
+                    <a href="#" class="searchBar-icons-item">
+                        <i class="fa-solid fa-cart-plus icon"></i>
+                        <span class="counterBadge">3</span>
+                        <span class="searchBar-icons-item-title">سبد خرید</span>
+                    </a>
+                    <!-- item3 -->
+
+                </div>
+
+
+            </div>
+        </section>
+    </div>
+    <!-- end top header -->
+
+    <!-- start blue-nav -->
+    <section class="wrapper-blue">
+        <div class="container noOverflow">
+            <div class="blue-nav">
+                <!-- blue-nav-category -->
+                <a href="#" class="blue-nav-category">
+
+                    <i class="fab fa-buffer"></i>
+
+                    <select class="w3-select" name="option" id="option">
+                        <option class="input-value" value="" disabled selected>همه دسته بندی ها</option>
+                        <option value="1">موبایل</option>
+                        <option value="2">کامپیوتر</option>
+                        <option value="3">سخت افزار</option>
+                    </select>
+
+                </a>
+                <!-- blue-nav-category -->
+
+                <!-- blue-nav center menu -->
+                <div class="blue-nav-menu">
+                    <ul class="blue-nav-menu-ul">
+                        <li class="blue-nav-menu-ul-li arrow_icon"><a href="#" class="blue-nav-menu-ul-li-a">صفحه
+                                اصلی</a>
+                            <div class="sub-menu-one">
+                                <div>
+                                    <a href="" class="sub-menu-link">شماره 1</a>
+                                    <a href="" class="sub-menu-link">شماره 2</a>
+                                    <a href="" class="sub-menu-link">شماره 3</a>
+                                </div>
+
+                                <div>
+                                    <a href="" class="sub-menu-link">شماره 4</a>
+                                    <a href="" class="sub-menu-link">شماره 5</a>
+                                    <a href="" class="sub-menu-link">شماره 6</a>
+                                </div>
+
+                                <div>
+                                    <a href="" class="sub-menu-link">شماره 7</a>
+                                    <a href="" class="sub-menu-link">شماره 8</a>
+                                    <a href="" class="sub-menu-link">شماره 9</a>
+                                </div>
+
+                                <div>
+                                    <a href="" class="sub-menu-link">شماره 10</a>
+                                    <a href="" class="sub-menu-link">شماره 11</a>
+                                    <a href="" class="sub-menu-link">شماره 12</a>
+                                </div>
+
+                            </div>
+                        </li>
+                        <li class="blue-nav-menu-ul-li arrow_icon"><a href="#" class="blue-nav-menu-ul-li-a">منو چند
+                                منظوره</a>
+                        </li>
+                        <li class="blue-nav-menu-ul-li"><a href="#" class="blue-nav-menu-ul-li-a">فروشگاه</a></li>
+                        <li class="blue-nav-menu-ul-li"><a href="#" class="blue-nav-menu-ul-li-a">اخبار</a></li>
+                        <li class="blue-nav-menu-ul-li"><a href="#" class="blue-nav-menu-ul-li-a">تماس با ما</a></li>
+                        <li class="blue-nav-menu-ul-li"><a href="#" class="blue-nav-menu-ul-li-a">درباره ما</a></li>
+                    </ul>
+                </div>
+                <!-- blue-nav center menu -->
+
+                <!-- left-menu -->
+
+                <div class="left-menu">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                    <a href="#"><i class="fab fa-google-plus-g"></i></a>
+                    <a href="#"><i class="fab fa-whatsapp"></i></a>
+                    <a href="#"><i class="fab fa-instagram"></i></a>
+                </div>
+                <!-- left-menu -->
+
+
+            </div>
+        </div>
+    </section>
+    <!-- end blue-nav -->
+
+    <!-- start slideshow row -->
+    <section class="container">
+        <div class="slideshow">
+            <!-- start slider -->
+            <div class="slideshow-slider">
+                <section class="carousel">
+                    <button class="slider-button slider-button-prev" data-slide-direction="prev">&#8592</button>
+                    <button class="slider-button slider-button-next" data-slide-direction="next">&#8594</button>
+                    <ul class="slides">
+                        <li class="slide" data-active-slide>
+                            <img src="https://img.freepik.com/free-photo/beautiful-tree-middle-field-covered-with-grass-with-tree-line-background_181624-29267.jpg?w=1060&t=st=1670093487~exp=1670094087~hmac=0efe31cac4ad9457031ff3a8b14f9be760a038fae38f101b8a292c1f766e725e"
+                                alt="Nature Image #1" />
+                        </li>
+                        <li class="slide">
+                            <img src="https://img.freepik.com/free-photo/vestrahorn-mountains-stokksnes-iceland_335224-667.jpg?w=1060&t=st=1670093535~exp=1670094135~hmac=27728351e326c808a35c161c98c1d8ff9e6328c4ceb471c2725c4cc3cf94c0c2"
+                                alt="Nature Image #2" />
+                        </li>
+                        <li class="slide">
+                            <img src="https://img.freepik.com/free-photo/beautiful-shot-grassy-hills-covered-trees-near-mountains-dolomites-italy_181624-24400.jpg?w=900&t=st=1670093563~exp=1670094163~hmac=53dd76fac233cfc81416be6e48979f21ca375c70470fba4b50eea93c9e27cee9"
+                                alt="Nature Image #3" />
+                        </li>
+                    </ul>
+                    <div class="slides-circles">
+                        <div data-active-slide></div>
+                        <div></div>
+                        <div></div>
+                    </div>
+                </section>
+
+            </div>
+            <!-- end slider -->
+
+            <div class="slideshow-one"></div>
+            <div class="slideshow-two"></div>
+            <div class="slideshow-three"></div>
+        </div>
+    </section>
+    <!-- start slideshow row -->
+
+    <!-- start support section -->
+    <section class="container">
+        <div class="support">
+            <!-- item1 -->
+            <div class="support-card">
+                <img src="images/support/return_image.png">
+                <div>
+                    <span class="support-card-title">بازگشت پول</span>
+                    <span class="support-card-desc">تضمین بازگشت به کمتر از 7 روز</span>
+                </div>
+            </div>
+            <!-- item1 -->
+            <!-- item2 -->
+            <div class="support-card">
+                <img src="images/support/shipped_image.png">
+                <div>
+                    <span class="support-card-title">حمل و نقل رایگان</span>
+                    <span class="support-card-desc">حمل و نقل رایگان در همه منظور</span>
+                </div>
+            </div>
+            <!-- item2 -->
+            <!-- item3 -->
+            <div class="support-card">
+                <img src="images/support/support_image.png">
+                <div>
+                    <span class="support-card-title">پشتیبانی آنلاین</span>
+                    <span class="support-card-desc">پشتیبانی آنلاین ۲۴ ساعت در روز</span>
+                </div>
+            </div>
+            <!-- item3 -->
+            <!-- item4 -->
+            <div class="support-card">
+                <img src="images/support/shield_image.png">
+                <div>
+                    <span class="support-card-title">پرداخت امن</span>
+                    <span class="support-card-desc">امنیت کامل در پرداخت</span>
+                </div>
+            </div>
+            <!-- item4 -->
+            <!-- item5 -->
+            <div class="support-card">
+                <img src="images/support/discount_image.png">
+                <div>
+                    <span class="support-card-title">تخفیف برای عضو</span>
+                    <span class="support-card-desc">در هر سفارش بیش از ۲۰ درصد</span>
+                </div>
+            </div>
+            <!-- item5 -->
+        </div>
+    </section>
+    <!-- end support section -->
+
+    <!-- start product bar 1 -->
+    <section class="container">
+        <div class="productBar">
+            <!-- item1 -->
+            <div class="productBar-item">
+                <img src="images/productBar1/speaker.png">
+                <span>اسپیکر صوتی</span>
+            </div>
+            <!-- item1 -->
+            <!-- item2 -->
+            <div class="productBar-item">
+                <img src="images/productBar1/tab.png">
+                <span>تبلت و موبایل</span>
+            </div>
+            <!-- item2 -->
+            <!-- item3 -->
+            <div class="productBar-item">
+                <img src="images/productBar1/cam.png">
+                <span>دوربین فیلم برداری</span>
+            </div>
+            <!-- item3 -->
+            <!-- item4 -->
+            <div class="productBar-item">
+                <img src="images/productBar1/watch.png">
+                <span>ساعت دیجیتال</span>
+            </div>
+            <!-- item4 -->
+            <!-- item5 -->
+            <div class="productBar-item">
+                <img src="images/productBar1/hardware.png">
+                <span>قطعات کامپیوتر</span>
+            </div>
+            <!-- item5 -->
+            <!-- item6 -->
+            <div class="productBar-item">
+                <img src="images/productBar1/lap.png">
+                <span>لپ تاپ و دسکتاپ</span>
+            </div>
+            <!-- item6 -->
+            <!-- item7 -->
+            <div class="productBar-item">
+                <img src="images/productBar1/tv.png">
+                <span>مانیتور</span>
+            </div>
+            <!-- item7 -->
+            <!-- item8 -->
+            <div class="productBar-item">
+                <img src="images/productBar1/key.png">
+                <span>کیبورد</span>
+            </div>
+            <!-- item8 -->
+            <!-- item9 -->
+            <div class="productBar-item">
+                <img src="images/productBar1/mouse.png">
+                <span>موس</span>
+            </div>
+            <!-- item9 -->
+        </div>
+    </section>
+    <!-- end product bar 1 -->
+
+    <!-- start threePhoto bar -->
+    <section class="container">
+        <div class="threePhoto">
+            <!-- item1 -->
+            <div class="threePhoto-item">
+                <span class="threePhoto-item-title">تبلت شیائومی</span>
+                <span class="threePhoto-item-desc">مدل Redmi Pad</span>
+                <span class="threePhoto-item-footer">ارسال رایگان کلیه سفارشات</span>
+            </div>
+            <!-- item1 -->
+            <!-- item2 -->
+            <div class="threePhoto-item">
+                <span class="threePhoto-item-title">هدفون مخصوص</span>
+                <span class="threePhoto-item-desc">بازی مدل K10 Pro</span>
+                <span class="threePhoto-item-footer">ارسال رایگان کلیه سفارشات</span>
+            </div>
+            <!-- item2 -->
+            <!-- item3 -->
+            <div class="threePhoto-item">
+                <span class="threePhoto-item-title">کنترل بازی</span>
+                <span class="threePhoto-item-desc">بازی ایکس باکس</span>
+                <span class="threePhoto-item-footer">محصولات با کیفیت بالا</span>
+            </div>
+            <!-- item3 -->
+        </div>
+    </section>
+    <!-- start three-photo bar -->
+
+    <!-- start VIPproducts -->
+    <section class="container">
+        <div class="VIPproducts">
+            <!-- item1 -->
+            <div class="VIPproduct">
+                <!-- right -->
+                <div class="VIPproduct-right">
+                    <div class="VIPproduct-right-img">
+                        <span>30%</span>
+                        <img src="images/vip/vip1.jpg">
+                    </div>
+                </div>
+                <!-- left -->
+                <div class="VIPproduct-left">
+                    <span class="takhfif-zard">ویژه</span>
+                    <span class="VIPproduct-left-title1">موس و کیبورد</span>
+                    <h2 class="VIPproduct-left-title2">گوشی موبایل آیفون</h2>
+
+                    <!-- price row -->
+                    <div class="VIPproduct-left-desc-price">
+                        <span class="old-price">390.000 تومان</span>
+                        <span class="current-price">490.000 تومان</span>
+                    </div>
+                    <!-- price row -->
+
+                    <div class="VIPproduct-left-desc-option">
+                        <p class="VIPproduct-left-desc-option-item">سخت افزار قوی با پردازنده سریع</p>
+                        <p class="VIPproduct-left-desc-option-item">دوربین با رزولوشن بالا</p>
+                        <p class="VIPproduct-left-desc-option-item">عمر طولانی باطری</p>
+                    </div>
+
+                    <!-- makoos -->
+                    <div class="makoos">
+                        <div class="makoos-numbers">
+                            <span class="makoos-item-number">48</span>
+                            <span class="makoos-item-number">25</span>
+                            <span class="makoos-item-number">06</span>
+                            <span class="makoos-item-number">1806</span>
+                        </div>
+                        <div class="makoos-title">
+                            <span class="makoos-item-title">ثانیه</span>
+                            <span class="makoos-item-title">دقیقه</span>
+                            <span class="makoos-item-title">ساعت</span>
+                            <span class="makoos-item-title">روز</span>
+                        </div>
+                    </div>
+                    <!-- makoos -->
+
+                    <div class="VIPproduct-left-footer">
+                        <button class="addToCardBtn">افزودن به سبد خرید</button>
+                        <div class="VIPproduct-left-footer-icon">
+                            <a href=""><i class="fa-regular fa-heart"></i></a>
+                            <a href=""><i class="fa-solid fa-sliders fa-rotate-90"></i></a>
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+                <!-- left -->
+            </div>
+            <!-- item1 -->
+
+            <!-- item2 -->
+            <div class="VIPproduct">
+                <!-- right -->
+                <div class="VIPproduct-right">
+                    <div class="VIPproduct-right-img">
+                        <span>30%</span>
+                        <img src="images/vip/vip1.jpg">
+                    </div>
+                </div>
+                <!-- left -->
+                <div class="VIPproduct-left">
+                    <span class="takhfif-zard">ویژه</span>
+                    <span class="VIPproduct-left-title1">موس و کیبورد</span>
+                    <h2 class="VIPproduct-left-title2">گوشی موبایل آیفون</h2>
+
+                    <!-- price row -->
+                    <div class="VIPproduct-left-desc-price">
+                        <span class="old-price">390.000 تومان</span>
+                        <span class="current-price">490.000 تومان</span>
+                    </div>
+                    <!-- price row -->
+
+                    <div class="VIPproduct-left-desc-option">
+                        <p class="VIPproduct-left-desc-option-item">سخت افزار قوی با پردازنده سریع</p>
+                        <p class="VIPproduct-left-desc-option-item">دوربین با رزولوشن بالا</p>
+                        <p class="VIPproduct-left-desc-option-item">عمر طولانی باطری</p>
+                    </div>
+
+                    <!-- makoos -->
+                    <div class="makoos">
+                        <div class="makoos-numbers">
+                            <span class="makoos-item-number">48</span>
+                            <span class="makoos-item-number">25</span>
+                            <span class="makoos-item-number">06</span>
+                            <span class="makoos-item-number">1806</span>
+                        </div>
+                        <div class="makoos-title">
+                            <span class="makoos-item-title">ثانیه</span>
+                            <span class="makoos-item-title">دقیقه</span>
+                            <span class="makoos-item-title">ساعت</span>
+                            <span class="makoos-item-title">روز</span>
+                        </div>
+                    </div>
+                    <!-- makoos -->
+
+                    <div class="VIPproduct-left-footer">
+                        <button class="addToCardBtn">افزودن به سبد خرید</button>
+                        <div class="VIPproduct-left-footer-icon">
+                            <a href=""><i class="fa-regular fa-heart"></i></a>
+                            <a href=""><i class="fa-solid fa-sliders fa-rotate-90"></i></a>
+                        </div>
+
+
+                    </div>
+
+
+                </div>
+                <!-- left -->
+            </div>
+            <!-- item2 -->
+        </div>
+    </section>
+    <!-- end VIP products -->
+
+    <!-- start footer -->
+    <section class="wrapper  ">
+        <div class="container">
+            <div class="footer">
+                <!-- footer down -->
+                <div class="footerTop wrapper-dark">
+                    <!-- item1 -->
+                    <div class="footerTop-card-about">
+                        <img src="images/logo_footer.png">
+                        <p>لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ، و با استفاده از طراحان
+                            گرافیک است
+                        </p>
+                        <p>خیابان وال استریت، بریتانیا، لندن <br>
+                            تلفن: ۰۲۱-۱۲۳۴-۳۴۵۶ <br>
+                            ایمیل : example@gmail.com</p>
+                    </div>
+                    <!-- item1 -->
+                    <!-- item2 -->
+                    <div class="footerTop-card">
+                        <h4>دسته بندی</h4>
+                        <ul class="footerTop-card-ul">
+                            <li><a href="">اسپیکر و صوتی</a></li>
+                            <li><a href="">بدون دسته بندی</a></li>
+                            <li><a href="">تبلت و موبایل</a></li>
+                            <li><a href="">دوربین فیلم برداری</a></li>
+                            <li><a href="">ساعت دیجیتال</a></li>
+                        </ul>
+                    </div>
+                    <!-- item2 -->
+
+                    <!-- item3 -->
+                    <div class="footerTop-card">
+                        <h4>حساب کاربری</h4>
+                        <ul class="footerTop-card-ul">
+                            <li><a href="">پرداخت</a></li>
+                            <li><a href="">حساب کاربری من</a></li>
+                            <li><a href="">سبد خرید</a></li>
+                            <li><a href="">فروشگاه</a></li>
+                            <li><a href="">لیست علاقه مندی ها</a></li>
+                        </ul>
+                    </div>
+                    <!-- item3 -->
+
+                    <!-- item4 -->
+                    <div class="footerTop-card">
+                        <h4>حساب کاربری</h4>
+                        <ul class="footerTop-card-ul">
+                            <li><a href="">پرداخت</a></li>
+                            <li><a href="">حساب کاربری من</a></li>
+                            <li><a href="">سبد خرید</a></li>
+                            <li><a href="">فروشگاه</a></li>
+                            <li><a href="">لیست علاقه مندی ها</a></li>
+                        </ul>
+                    </div>
+                    <!-- item4 -->
+
+                    <!-- item5 -->
+                    <div class="footerTop-card">
+                        <h4>اطلاعات</h4>
+                        <ul class="footerTop-card-ul">
+                            <li><a href="">حریم خصوصی</a></li>
+                            <li><a href="">اطلاعات تحویل</a></li>
+                            <li><a href="">شرایط و ضوابط</a></li>
+                            <li><a href="">سیاست بازگشت</a></li>
+                            <li><a href="">خدمات مشتری</a></li>
+                        </ul>
+                    </div>
+                    <!-- item5 -->
+                </div>
+
+                <!-- footer down -->
+                <div class="footer-down wrapper-dark">
+                    <p class="footerText"><span class="love"><a href="https://github.com/MiladJoodi/">❤</a></span> make with</p>
+                </div>
+                <!-- footer down -->
+
+            </div>
+        </div>
+
+    </section>
+
+    <!-- end footer -->
+
+</body>
+<script>
+    $(document).ready(function () {
+
+        $('body').persiaNumber();  // برای کل صفحه
+        // $('.p-price').persiaNumber(); // فقط تگ ها با کلاس مشخص
+
+    });
+
+</script>
+<script src="js/slider-shop.js"></script>
+
+</html>

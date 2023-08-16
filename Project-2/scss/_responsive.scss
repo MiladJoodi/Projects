@@ -1,0 +1,94 @@
+@media screen and (max-width: 1230px) {
+    .blue-nav-menu {
+        display: none;
+    }
+
+    .blue-nav {
+        /* grid-template-columns: auto auto; */
+        /* justify-content: start; */
+        grid-template-columns: 1fr 1fr;
+        justify-items: start;
+    }
+
+    .left-menu {
+        justify-self: end;
+    }
+}
+
+@media screen and (max-width: 978px) {
+    .VIPproduct-left .takhfif-zard {
+        right: 0px;
+    }
+    .icon{
+        display: none;
+    }
+    .counterBadge{
+        display: none;
+    }
+    .searchBar .searchBar-icons {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(3 1fr);
+        justify-content: center;
+        gap: 6px;
+    }
+
+.productBar {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: 1fr 1fr;
+    gap: 20px;
+    padding: 15px 20px;
+    font-size: 0.875rem;
+}
+.support-card:nth-last-child(1){
+display: none;
+}
+
+.support{
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: 1fr 1fr;    
+    gap: 10px;
+}
+.support-card{
+    border: 1px solid rgba($color-dark, 0.1);
+padding: 5px;
+border-radius: 25px;
+}
+.VIPproduct{
+    grid-template-columns: 1fr;
+}
+
+}
+@media screen and (max-width: 730px){
+.top-menu{
+    font-size: 10px;
+}
+.searchBar{
+    grid-template-columns:  1fr 1fr;
+}
+.searchBar .searchBar-icons{
+    display: none;
+}
+.slideshow{
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr auto auto auto;
+}
+.VIPproducts {
+    grid-template-columns: 1fr;
+    grid-template-rows: 1fr 1fr;
+    // padding: 25px;
+    // gap: 30px;
+}
+.VIPproduct-right-img{
+    display: grid;
+    justify-items: center;
+}
+.VIPproduct-right-img img {
+    width: 50%;
+}
+.footer .footerTop {
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: 2fr;
+}
+}
