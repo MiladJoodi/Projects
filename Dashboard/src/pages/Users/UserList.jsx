@@ -9,6 +9,11 @@ import DeleteOutlineIcon from '@mui/icons-material/DeleteOutline';
 
 export default function UserList() {
   const [userDatas, setUserData] = useState(userRows);
+
+  const userDelete = userID=>{
+    setUserData(userDatas.filter(user=> user.id !== userID))
+  }
+
   const columns = [
     {
       field: "id",
@@ -54,10 +59,10 @@ export default function UserList() {
       renderCell: (params)=>{
         return (
           <>
-          <Link to='/'>
+          <Link to={`/users/${params.row.id}`} className="link">
             <button className="userListEdit">Edit</button>
           </Link>
-          <DeleteOutlineIcon className="userListDelete" />
+          <DeleteOutlineIcon className="userListDelete" onClick={()=>userDelete(params.row.id)} />
         </>
         )
       }
@@ -70,7 +75,14 @@ export default function UserList() {
         rows={userDatas}
         columns={columns}
         disableSelectionOnClick
-        pageSize={2}
+        initialState={{
+          pagination: {
+            paginationModel: {
+              pageSize: 5,
+            },
+          },
+        }}
+        pageSizeOptions={[2]}
       />
     </div>
   );
