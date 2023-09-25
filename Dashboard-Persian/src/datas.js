@@ -1,50 +1,52 @@
 let xAxisData = [
     {
-        "name": 'Jan',
+        "name": 'فروردین',
         "sale": 112_000
     },
     {
-        "name": 'Feb',
+        "name": 'اردیبهشت',
         "sale": 99_000
     },
     {
-        "name": 'Mar',
+        "name": 'خرداد',
         "sale": 12_000
     },
     {
-        "name": 'Apr',
+        "name": 'تیر',
         "sale": 99_000
     },
     {
-        "name": 'May',
+        "name": 'مرداد',
         "sale": 112_000
     },
     {
-        "name": 'Jun',
+        "name": 'شهریور',
         "sale": 85_000
     },
     {
-        "name": 'jul',
+        "name": 'مهر',
         "sale": 34_000
     },
     {
-        "name": 'Aug',
+        "name": 'آبان',
         "sale": 18_000
     },
     {
-        "name": 'Sep',
+        "name": 'آذر',
         "sale": 0
     },
     {
-        "name": 'Oct',
+        "name": 'دی',
         "sale": 73_078
     },
     {
-        "name": 'Nov',
+        "name": 'بهمن',
         "sale": 12_000
     },
     {
-        "name": 'Dec',
+        "name": 'اسفند',
         "sale": 97_000
     },
 ]
+
+export {xAxisData}
