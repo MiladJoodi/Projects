@@ -1,0 +1,59 @@
+.topbar {
+    width: 100%;
+    height: 50px;
+    background-color: #f6f8fa;
+    border-bottom: 1px solid #e7e7e7;
+}
+.topbarWrapper{
+    padding: 5px 15px;
+    display: flex;
+    justify-content: space-between;
+    /* align-items: center; */
+}
+.topbarRight{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 5px;
+}
+.topbarTitleIcon{
+    font-size: 22px;
+    opacity: 0.3;
+}
+.topbarTitle{
+    font-size: 24px;
+    color: gray;
+}
+.topbarLeft{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* gap: 5px; */
+}
+.topbarImg{
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 5px;
+    cursor: pointer;
+    border: 1px solid gray;
+}
+.topbarIcon{
+    font-size: 21px;
+
+}  
+.topbarBadge{
+    font-size: 12px;
+    position: absolute;
+    background-color: red;
+    border-radius: 50%;
+    width: 15px;
+    height: 15px;
+    font-weight: bold;
+    line-height: 15px;
+    top: 5px;
+    right: 2px;
+    color: #fff;
+    font-family: 'Samim';
+}
