@@ -1,6 +1,6 @@
 .features {
-    width: 100%;
-    /* flex: 5; */
+    /* width: 100%; */
+    flex: 5;
     display: flex;
     justify-content: space-between;
 }

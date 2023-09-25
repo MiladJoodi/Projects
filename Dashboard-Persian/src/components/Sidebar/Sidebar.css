@@ -23,7 +23,6 @@
     font-size: 14px;
     font-weight: 600;
     color: rgb(68, 68, 68);
-    margin-bottom: 15px;
 }
 .sidebarTitle{
     letter-spacing: -1px;
@@ -35,7 +34,7 @@
 .sidebarListItem{
     display: flex;
     align-items: center;
-    margin-bottom: 5px;
+    /* margin-bottom: 5px; */
     padding: 5px;
     border-radius: 10px;
     cursor: pointer;
