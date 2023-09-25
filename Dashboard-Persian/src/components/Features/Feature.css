@@ -13,8 +13,8 @@
     cursor: pointer;
     box-shadow: 0 0 15px -10px rgba(0, 0, 0, 0.75);
     letter-spacing: -.5px;
-
-
+    /* background-color: #f6f8fa; */
+    /* border: 1px solid #e7e7e7; */
 }
 
 .featureTitle {

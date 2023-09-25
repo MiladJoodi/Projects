@@ -1,4 +1,5 @@
 let xAxisData = [
+    {},
     {
         "name": 'فروردین',
         "sale": 112_000
@@ -47,6 +48,34 @@ let xAxisData = [
         "name": 'اسفند',
         "sale": 97_000
     },
+    {}
 ]
 
-export {xAxisData}
+let newMembers= [
+    {
+        id: 1,
+        username: 'Ali Panahi',
+        title: 'Programmer',
+        img:'/images/profile1.jpg'
+    },
+    {
+        id: 2,
+        username: 'Mohammad Amin',
+        title: 'Web Developer',
+        img:'/images/profile2.jpg'
+    },
+    {
+        id: 3,
+        username: 'Milad Joodi',
+        title: 'Student',
+        img:'/images/profile3.jpg'
+    },
+    {
+        id: 4,
+        username: 'Ali Mizani',
+        title: 'Crypto',
+        img:'/images/profile2.jpg'
+    },
+]
+
+export {xAxisData,newMembers}

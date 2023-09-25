@@ -23,7 +23,7 @@ export default function Topbar() {
             <BsSun className="topbarIcon" />
           </IconButton>
           <IconButton aria-label="fingerprint" color="gray">
-            <span className="topbarBadge">2</span>
+            <span className="topbarBadge persianNumber">2</span>
             <IoNotificationsOutline className="topbarIcon" />
           </IconButton>
           <IconButton aria-label="fingerprint" color="gray">

@@ -9,8 +9,8 @@ export default function Feature() {
       <div className="featureItem">
         <span className="featureTitle">درآمد</span>
         <div className="featureContainer">
-          <span className="featureMoney">$2,415</span>
-          <span className="featureRate">
+          <span className="featureMoney persianNumber">$2,415</span>
+          <span className="featureRate persianNumber">
             $-11.4
             <ArrowDownwardOutlinedIcon className="featureIcon negative" />
           </span>
@@ -21,8 +21,8 @@ export default function Feature() {
       <div className="featureItem">
         <span className="featureTitle">فروش کل</span>
         <div className="featureContainer">
-          <span className="featureMoney">$2,415</span>
-          <span className="featureRate">
+          <span className="featureMoney persianNumber">$2,415</span>
+          <span className="featureRate persianNumber">
             $-1.4
             <ArrowDownwardOutlinedIcon className="featureIcon negative" />
           </span>
@@ -33,8 +33,8 @@ export default function Feature() {
       <div className="featureItem">
         <span className="featureTitle">سود</span>
         <div className="featureContainer">
-          <span className="featureMoney">$2,415</span>
-          <span className="featureRate">
+          <span className="featureMoney persianNumber">$2,415</span>
+          <span className="featureRate persianNumber">
             $+2.4
             <ArrowUpwardOutlinedIcon className="featureIcon" />
           </span>

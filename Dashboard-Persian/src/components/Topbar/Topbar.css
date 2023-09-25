@@ -44,16 +44,15 @@
 
 }  
 .topbarBadge{
-    font-size: 12px;
+    font-size: 11px;
     position: absolute;
     background-color: red;
     border-radius: 50%;
-    width: 15px;
-    height: 15px;
+    width: 13px;
+    height: 13px;
     font-weight: bold;
-    line-height: 15px;
-    top: 5px;
-    right: 2px;
+    line-height: 16px;
+    top: 6px;
+    right: 6px;
     color: #fff;
-    font-family: 'Samim';
 }
