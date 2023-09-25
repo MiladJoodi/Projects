@@ -4,6 +4,7 @@ import UserList from "./pages/Users/UserList";
 import routes from "./routes";
 import { useRoutes } from "react-router-dom";
 import Topbar from "./components/Topbar/Topbar";
+import Sidebar from "./components/Sidebar/Sidebar";
 
 function App() {
   let router = useRoutes(routes);
@@ -11,7 +12,10 @@ function App() {
   return (
     <>
       <Topbar />
-      {router}
+      <div className="container">
+        <Sidebar />
+        {router}
+      </div>
     </>
   );
 }
