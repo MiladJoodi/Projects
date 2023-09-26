@@ -7,37 +7,43 @@ export default function Feature() {
     <div className="features">
       {/* feature item 1 */}
       <div className="featureItem">
-        <span className="featureTitle">درآمد</span>
-        <div className="featureContainer">
-          <span className="featureMoney persianNumber">$2,415</span>
-          <span className="featureRate persianNumber">
-            $-11.4
-            <ArrowDownwardOutlinedIcon className="featureIcon negative" />
-          </span>
+        <div className="featureItemContainer">
+          <span className="featureTitle">فروش امروز</span>
+          <div className="featureContainer">
+            <span className="featureMoney persianNumber">35,415 تومان</span>
+            <span className="featureRate persianNumber">
+              5%+
+              <ArrowUpwardOutlinedIcon className="featureIcon" />
+            </span>
+          </div>
         </div>
         <span className="featureSub">نسب به ماه گذشته</span>
       </div>
       {/* feature item 1 */}
       <div className="featureItem">
-        <span className="featureTitle">فروش کل</span>
-        <div className="featureContainer">
-          <span className="featureMoney persianNumber">$2,415</span>
-          <span className="featureRate persianNumber">
-            $-1.4
-            <ArrowDownwardOutlinedIcon className="featureIcon negative" />
-          </span>
+        <div className="featureItemContainer">
+          <span className="featureTitle">سود</span>
+          <div className="featureContainer">
+            <span className="featureMoney persianNumber">92,415 تومان</span>
+            <span className="featureRate persianNumber">
+            21%-
+              <ArrowDownwardOutlinedIcon className="featureIcon negative" />
+            </span>
+          </div>
         </div>
         <span className="featureSub">نسب به ماه گذشته</span>
       </div>
       {/* feature item 1 */}
       <div className="featureItem">
-        <span className="featureTitle">سود</span>
-        <div className="featureContainer">
-          <span className="featureMoney persianNumber">$2,415</span>
-          <span className="featureRate persianNumber">
-            $+2.4
-            <ArrowUpwardOutlinedIcon className="featureIcon" />
-          </span>
+        <div className="featureItemContainer">
+          <span className="featureTitle">جمع سود این ماه</span>
+          <div className="featureContainer">
+            <span className="featureMoney persianNumber">772,415 تومان</span>
+            <span className="featureRate persianNumber">
+            17%+
+              <ArrowUpwardOutlinedIcon className="featureIcon" />
+            </span>
+          </div>
         </div>
         <span className="featureSub">نسب به ماه گذشته</span>
       </div>

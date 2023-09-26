@@ -8,17 +8,33 @@
 .featureItem {
     flex: 1;
     margin: 0 20px;
-    padding: 30px;
+    /* padding: 10px; */
     border-radius: 10px;
     cursor: pointer;
-    box-shadow: 0 0 15px -10px rgba(0, 0, 0, 0.75);
     letter-spacing: -.5px;
-    /* background-color: #f6f8fa; */
-    /* border: 1px solid #e7e7e7; */
+    background-color: #f6f8fa;
+    border-radius: 10px;
+    border:  1px solid #e7e7e7;
+display: flex;
+flex-direction: column;
+text-align: center;
+
+justify-content: center;
+
+}
+.featureItemContainer{
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    /* text-align: center; */
+    justify-content: center;
+
 }
 
 .featureTitle {
-    font-size: 20px;
+    font-size: 16px;
+    text-align: center;
+
 }
 
 .featureContainer {
@@ -28,7 +44,7 @@
 }
 
 .featureMoney {
-    font-size: 30px;
+    font-size: 18px;
     font-weight: bold;
 }
 
@@ -49,6 +65,6 @@
 }
 
 .featureSub {
-    font-size: 15px;
-    color: gray;
+    font-size: 13px;
+    color: rgba(128, 128, 128, 0.678);
 }

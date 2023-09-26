@@ -113,5 +113,47 @@ let transactions = [
     img: 'images/Steve-Jobs.jpg'
   },
 ];
+let userRows = [
+    {
+        id: 1,
+        username: 'Qadir Yolme',
+        avatar: 'images/profile.jfif',
+        status: 'active',
+        transaction: '$129.52',
+        email: 'amin@gmail.com'
+    },
+    {
+        id: 2,
+        username: 'Amin Saeedi',
+        avatar: 'images/profile.jfif',
+        status: 'non-active',
+        transaction: '$110',
+        email: 'amin@gmail.com'
+    },
+    {
+        id: 3,
+        username: 'Sasan Moq',
+        avatar: 'images/profile.jfif',
+        status: 'active',
+        transaction: '$98',
+        email: 'amin@gmail.com'
+    },
+    {
+        id: 4,
+        username: 'Zahra Agayi',
+        avatar: 'images/profile.jfif',
+        status: 'active',
+        transaction: '$0',
+        email: 'amin@gmail.com'
+    },
+    {
+        id: 5,
+        username: 'Hamze mohammadi',
+        avatar: 'images/profile.jfif',
+        status: 'active',
+        transaction: '$55.98',
+        email: 'amin@gmail.com'
+    }
+]
 
-export { xAxisData, newMembers,transactions };
+export { xAxisData, newMembers, transactions, userRows }
