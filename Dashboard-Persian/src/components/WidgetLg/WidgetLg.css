@@ -1,0 +1,65 @@
+.widgetLg {
+    flex: 2;
+    padding: 20px;
+    box-shadow: 0 0 15px -10px rgba(0, 0, 0, .75);
+}
+
+.widgetLgTitle {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.widgetLgTable {
+    width: 100%;
+    border-spacing: 20px;
+}
+
+.widgetLgTh {
+    text-align: right;
+}
+
+.widgetLgUser {
+    display: flex;
+    align-items: center;
+}
+
+.widgetLgTr {
+    /* text-align: center; */
+}
+
+.widgetLgImg {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-left: 5px;
+}
+
+.widgetLgDate,
+.widgetLgAmount {
+    font-weight: 300;
+    opacity: .5;
+}
+.widgetLgStatus{
+    text-align: left;
+}
+
+.widgetLgButton {
+    border: none;
+    padding: 5px 7px;
+    border-radius: 10px;
+    font-family: 'Samim';
+    width: 80px;
+}
+.widgetLgButton.موفق{
+    color: #3bb077;
+    background-color: #e5faf2;
+}
+.widgetLgButton.انتظار{
+    color: #2a7ade;
+    background-color: #ebf1fe;
+}
+.widgetLgButton.کنسل{
+    color: #d95087;
+    background-color: #fff0f1;
+}
