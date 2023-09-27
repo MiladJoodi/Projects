@@ -116,40 +116,40 @@ let transactions = [
 let userRows = [
     {
         id: 1,
-        username: 'Qadir Yolme',
-        avatar: 'images/profile.jfif',
+        username: 'علی رضا پناهی',
+        avatar: 'images/profile3.jpg',
         status: 'active',
         transaction: '$129.52',
         email: 'amin@gmail.com'
     },
     {
         id: 2,
-        username: 'Amin Saeedi',
-        avatar: 'images/profile.jfif',
+        username: 'جواد رضایی',
+        avatar: 'images/profile4.jpg',
         status: 'non-active',
         transaction: '$110',
         email: 'amin@gmail.com'
     },
     {
         id: 3,
-        username: 'Sasan Moq',
-        avatar: 'images/profile.jfif',
+        username: 'علی احمدی',
+        avatar: 'images/profile5.jpg',
         status: 'active',
         transaction: '$98',
         email: 'amin@gmail.com'
     },
     {
         id: 4,
-        username: 'Zahra Agayi',
-        avatar: 'images/profile.jfif',
+        username: 'زهرا حسینی',
+        avatar: 'images/profile6.jpg',
         status: 'active',
         transaction: '$0',
         email: 'amin@gmail.com'
     },
     {
         id: 5,
-        username: 'Hamze mohammadi',
-        avatar: 'images/profile.jfif',
+        username: 'معصومه اصغری',
+        avatar: 'images/profile7.jpg',
         status: 'active',
         transaction: '$55.98',
         email: 'amin@gmail.com'
