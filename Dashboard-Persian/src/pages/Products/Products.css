@@ -1,13 +1,14 @@
 .userList{
     flex: 5;
-    margin: 20px;
+    background-color: #f6f8fa;
+border-radius: 10px;
+/* border:  1px solid #e7e7e7; */
 }
 
 .userListUser{
     display: flex;
     align-items: center;
-    font-family: 'Samim';
-    /* text-decoration: none; */
+    
 }
 .userListUserImg{
     width: 32px;
@@ -34,6 +35,6 @@
     color: red;
     cursor: pointer;
 }
-.MuiDataGrid-cellContent{
+.MuiDataGrid-columnHeaders{
     font-family: 'IranSans';
 }

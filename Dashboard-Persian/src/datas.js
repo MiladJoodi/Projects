@@ -119,7 +119,7 @@ let userRows = [
         username: 'علی رضا پناهی',
         avatar: 'images/profile3.jpg',
         status: 'active',
-        transaction: '$129.52',
+        transaction: '129,000',
         email: 'amin@gmail.com'
     },
     {
@@ -127,33 +127,59 @@ let userRows = [
         username: 'جواد رضایی',
         avatar: 'images/profile4.jpg',
         status: 'non-active',
-        transaction: '$110',
-        email: 'amin@gmail.com'
+        transaction: '192,000',
+        email: 'javadi.reza@yahoo.com'
     },
     {
         id: 3,
         username: 'علی احمدی',
         avatar: 'images/profile5.jpg',
         status: 'active',
-        transaction: '$98',
-        email: 'amin@gmail.com'
+        transaction: '378,000',
+        email: 'ahmadi.word@gmail.com'
     },
     {
         id: 4,
         username: 'زهرا حسینی',
         avatar: 'images/profile6.jpg',
         status: 'active',
-        transaction: '$0',
-        email: 'amin@gmail.com'
+        transaction: '0',
+        email: 'zahra.hosseini7570@gmail.com'
     },
     {
         id: 5,
         username: 'معصومه اصغری',
         avatar: 'images/profile7.jpg',
         status: 'active',
-        transaction: '$55.98',
-        email: 'amin@gmail.com'
+        transaction: '237,000',
+        email: 'masome.fg@gmail.com'
     }
 ]
+let products = [
+  {
+      id: 1,
+      title: 'Asus',
+      avatar: 'images/asus.jpeg',
+      price: 890
+  },
+  {
+      id: 2,
+      title: 'Acer',
+      avatar: 'images/acer.jpg',
+      price: 890
+  },
+  {
+      id: 3,
+      title: 'HP',
+      avatar: 'images/hp.jpg',
+      price: 890
+  },
+  {
+      id: 4,
+      title: 'Dell',
+      avatar: 'images/dell.jpg',
+      price: 890
+  },
+]
 
-export { xAxisData, newMembers, transactions, userRows }
+export { xAxisData, newMembers, transactions, userRows,products }

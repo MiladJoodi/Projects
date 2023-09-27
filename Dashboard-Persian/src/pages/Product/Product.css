@@ -1,0 +1,25 @@
+.product {
+    flex: 5;
+    margin: 0 20px;
+}
+
+.productTitleContainer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.productAddButton {
+    border: none;
+    /* width: 80px; */
+    border: none;
+    padding: 5px 45px;
+    color: #fff;
+    /* background-color: teal; */
+    background-color: #f6f8fa;
+    border-radius: 5px;
+    font-family: 'IranSans';
+    color: black;
+    border: 1px solid #e7e7e7;
+    cursor: pointer;
+}
