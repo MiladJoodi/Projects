@@ -15,11 +15,57 @@
     border: none;
     padding: 5px 45px;
     color: #fff;
-    /* background-color: teal; */
     background-color: #f6f8fa;
     border-radius: 5px;
     font-family: 'IranSans';
     color: black;
     border: 1px solid #e7e7e7;
     cursor: pointer;
+}
+.productTop{
+    display: flex;
+}
+.productTopLeft, .productTopRight{
+    flex: 1;
+}
+.productTopRight {
+    padding: 20px;
+    margin: 20px;
+    background-color: #f6f8fa;
+    border-radius: 5px;
+    border: 1px solid #e7e7e7;
+}
+
+.productInfoTop {
+    display: flex;
+    align-items: center;
+}
+
+.productInfoImg {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.productName {
+    font-weight: 600;
+}
+
+.productInfoBottom {
+    margin-top: 10px;
+}
+
+.productInfoItem {
+    width: 300px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.productInfoKey {
+    font-weight: 600;
+}
+
+.productInfoValue {
+    font-weight: 300;
 }
