@@ -48,7 +48,7 @@ export default function Products() {
       renderCell: (params)=>{
         return(
           <>
-          <Link to={`/products/${params.row.id}`} className="link">
+          <Link to={`/product/${params.row.id}`} className="link">
             <button className="userListEdit">ویرایش</button>
           </Link>
             <DeleteOutlineOutlinedIcon className="userListDelete" onClick={()=> productDelete(params.row.id)} />
