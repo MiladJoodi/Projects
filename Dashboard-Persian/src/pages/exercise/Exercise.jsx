@@ -27,7 +27,7 @@ export default function Exercise() {
       .then((datas) => {
         // console.log(datas.dolar_harat_sell.value);
         setPosts(datas);
-        console.log(posts.sekkeh.value);
+        // console.log(posts.sekkeh.value);
         setIsPending(false);
         setError(null);
       });
@@ -38,69 +38,60 @@ export default function Exercise() {
       {error && <div>{error}</div>}
       {isPending && <div>Loading...</div>}
       {/* dollar */}
-      <div className="featureItem currencyItem">
-        <div className="featureItemContainer">
-          <span className="featureTitle">دلار</span>
-          <div className="featureContainer">
-            <span className="featureMoney persianNumber">
-              {posts.sekkeh.value}
-            </span>
-            <span className="featureRate persianNumber">
-              {posts.sekkeh.change}%
-              <ArrowUpwardOutlinedIcon className="featureIcon" />
-            </span>
-          </div>
-        </div>
-        <span className="featureSub persianNumber">
-          تاریخ به روز رسانی: {posts.sekkeh.date}
-        </span>
-      </div>
-      {/* dollar */}
+      <div className="currencyItemContainer">
       <div className="featureItem currencyItem">
         <div className="featureItemContainer">
           <span className="featureTitle">دلار خرید</span>
           <div className="featureContainer">
             <span className="featureMoney persianNumber">
-              {posts.usd_buy.value}
+              {/* {posts.sekkeh.value} */}
             </span>
             <span className="featureRate persianNumber">
-              {posts.sekkeh.change}%
+              {/* {posts.sekkeh.change}% */}
               <ArrowUpwardOutlinedIcon className="featureIcon" />
             </span>
           </div>
         </div>
         <span className="featureSub persianNumber">
-          تاریخ به روز رسانی: {posts.sekkeh.date}
+          {/* تاریخ به روز رسانی: {posts.sekkeh.date} */}
         </span>
       </div>
+      {/* dollar */}
+      <div className="featureItem currencyItem">
+        <div className="featureItemContainer">
+          <span className="featureTitle">دلار فروش</span>
+          <div className="featureContainer">
+            <span className="featureMoney persianNumber">
+              {/* {posts.usd_buy.value} */}
+            </span>
+            <span className="featureRate persianNumber">
+              {/* {posts.sekkeh.change}% */}
+              <ArrowUpwardOutlinedIcon className="featureIcon" />
+            </span>
+          </div>
+        </div>
+        <span className="featureSub persianNumber">
+          {/* تاریخ به روز رسانی: {posts.sekkeh.date} */}
+        </span>
+      </div>
+      </div>
 
-      {/* table */}
-      {/* <TableContainer>
-      <Table sx={{ minWidth: 650 }} aria-label="simple table">
+      {posts && console.log(posts.sekkeh)}
+
+      <TableContainer>
+      <Table aria-label="simple table">
         <TableHead>
           <TableRow>
-            <TableCell>Dessert (100g serving)</TableCell>
-            <TableCell align="right">Calories</TableCell>
-            <TableCell align="right">Fat&nbsp;(g)</TableCell>
-            <TableCell align="right">Carbs&nbsp;(g)</TableCell>
-            <TableCell align="right">Protein&nbsp;(g)</TableCell>
+            <TableCell align="right">ارز</TableCell>
+            <TableCell align="right">قیمت</TableCell>
+            <TableCell align="right">آخرین به روز رسانی</TableCell>
           </TableRow>
         </TableHead>
         <TableBody>
-          {posts.map((post) => (
-            <TableRow
-              key={post.name}
-              sx={{ '&:last-child td, &:last-child th': { border: 0 } }}
-            >
-              <TableCell component="th">
           
-              </TableCell>
-              <TableCell align="right"></TableCell>
-            </TableRow>
-          ))}
         </TableBody>
       </Table>
-    </TableContainer> */}
+    </TableContainer>
 
     </div>
   );

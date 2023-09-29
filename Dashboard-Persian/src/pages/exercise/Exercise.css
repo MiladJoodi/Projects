@@ -1,7 +1,13 @@
 .currency{
     display: flex;
     flex: 5;
+    flex-direction: column;
+}
+.currencyItemContainer{
+    display: flex;
+    /* width: 50%; */
+    height: 100px;
 }
 .currencyItem{
-    height: 100px;
+    flex: 1;
 }
