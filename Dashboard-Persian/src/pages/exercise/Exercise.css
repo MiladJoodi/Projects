@@ -1,3 +1,7 @@
-.exercise{
+.currency{
+    display: flex;
     flex: 5;
+}
+.currencyItem{
+    height: 100px;
 }
