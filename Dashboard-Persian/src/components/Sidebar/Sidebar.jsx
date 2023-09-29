@@ -32,7 +32,7 @@ export default function Sidebar() {
             </Link>
             <li className="sidebarListItem">
               <TimelineIcon className="sidebarIcon" />
-              آنالیز
+              <Link to="/Currency" className="link">نرخ ارز</Link>
             </li>
             <li className="sidebarListItem">
               <TrendingUpIcon className="sidebarIcon" />

@@ -5,7 +5,7 @@ import routes from "./routes";
 import { useRoutes } from "react-router-dom";
 import Topbar from "./components/Topbar/Topbar";
 import Sidebar from "./components/Sidebar/Sidebar";
-import Exercise from "./pages/exercise/Exercise";
+import Currency from "./pages/Currency/Currency";
 import { useEffect, useState } from "react";
 
 function App() {
