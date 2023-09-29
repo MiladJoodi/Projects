@@ -1,19 +1,34 @@
 import React, { useEffect, useState } from "react";
 // import { useState, useEffect } from "react";
 import "./Exercise.css";
-import useFetch from './../../Hooks/useFetch'
-import useLocalStorage from './../../Hooks/useLocalStorage'
+import useFetch from "./../../Hooks/useFetch";
+import useLocalStorage from "./../../Hooks/useLocalStorage";
+import useInput from "./../../Hooks/useInput";
 
 export default function Exercise() {
+  const [usernameValue, usernameBinding, usernameReset] = useInput("");
+  const [passwordValue, passwordBinding, passwordReset] = useInput("");
 
-  const [value, setValue] = useLocalStorage('sabzlearn-value', '')
+  const submitHandler = (event)=>{
+    event.preventDefault()
+    alert('welcome')
+    usernameReset()
+    passwordReset()
+  }
 
   return (
     <div className="exersice">
-      <input type="text"
-      value={value}
-      onChange={(e)=> setValue(e.target.value)}
-      />
+      <form onSubmit={submitHandler}>
+        username:
+        <input
+          {...usernameBinding}
+        />
+        password:
+        <input
+          {...passwordBinding}
+        />
+        <button type="submit">Submit</button>
+      </form>
     </div>
   );
 }
