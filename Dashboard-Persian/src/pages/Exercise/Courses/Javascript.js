@@ -1,16 +1,15 @@
 import React from 'react'
 import { useState } from 'react'
+import CourseHoc from '../../../components/HOCs/courseHoc'
 
-export default function Javascript() {
-
-        const [title, setTitle] = useState('Javascript Expert')
-        const [price, setPrice] = useState('2_000_000')
+function Javascript({title, increasePrice,price}) {
 
   return (
     <div>
         <h3>Course Title: {title}</h3>
-        <button onClick={}>Increase course pricee</button>
+        <button onClick={increasePrice}>Increase course price (Price= {price})</button>
     </div>
     
   )
 }
+export default CourseHoc(Javascript, 'javascript expert', 2_200_000)
