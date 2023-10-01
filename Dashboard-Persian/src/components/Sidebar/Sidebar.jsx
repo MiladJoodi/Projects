@@ -80,10 +80,12 @@ export default function Sidebar() {
               <MailOutlineIcon className="sidebarIcon" />
               پیام ها
             </li>
+            <Link to="/updates" className="link">
             <li className="sidebarListItem">
               <DynamicFeedIcon className="sidebarIcon" />
               تغییرات
             </li>
+            </Link>
             <li className="sidebarListItem">
               <ChatBubbleOutlineIcon className="sidebarIcon" />
               اطلاع رسانی

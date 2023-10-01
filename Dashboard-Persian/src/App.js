@@ -6,6 +6,7 @@ import { useRoutes } from "react-router-dom";
 import Topbar from "./components/Topbar/Topbar";
 import Sidebar from "./components/Sidebar/Sidebar";
 import Currency from "./pages/Currency/Currency";
+import Updates from "./pages/Updates/Updates";
 import Exercise from "./pages/Exercise/Exercise";
 import { useEffect, useState } from "react";
 

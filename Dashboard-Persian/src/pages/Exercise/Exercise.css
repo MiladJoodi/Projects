@@ -1,9 +1,4 @@
 .exersice{
     flex: 5;
-}
-.bg-red{
-    background-color: red;
-}
-.color-blue{
-    background-color: blue;
+    margin: 0 20px;
 }
