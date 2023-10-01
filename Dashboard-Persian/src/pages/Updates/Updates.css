@@ -40,7 +40,6 @@ table {
     /* border: 1px solid rgb(230, 230, 230); */
     border-radius: 10px; 
     border-spacing: 0;
-    cursor: ;
     }
     
     .tableRow:hover{
@@ -55,4 +54,30 @@ th {
 
 .updateTableHead{
     font-family: 'Samim';
+}
+.pagination{
+    margin-top: 15px;
+    display: flex;
+    justify-content: center;
+    font-size: 14px;
+    gap: 5px;
+}
+.page-item{
+    border-radius: 10px;
+    border: 1px solid rgb(231, 231, 231);
+    cursor: pointer;
+}
+.page-item span{
+    text-decoration: none;
+    padding: 5px 10px;
+    display: block;
+}
+.pagination{
+    width: 90%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.active{
+    background-color: #d8d8d8;
 }
