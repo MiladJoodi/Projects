@@ -26,8 +26,10 @@ export default function Exercise() {
 
   return (
     <div className="exersice">
-      
-      
+      <h3 ref={titleRef}>my title</h3>
+      <input ref={usernameInputRef} type="text" placeholder="Username" />
+      <button onClick={addNewValue}>Add New Value</button>
+      <button onClick={addNewClass}>Add bg red</button>
     </div>
   );
 }
