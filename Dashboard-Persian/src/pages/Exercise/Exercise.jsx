@@ -4,18 +4,16 @@ import "./Exercise.css";
 import useFetch from "./../../Hooks/useFetch";
 import useLocalStorage from "./../../Hooks/useLocalStorage";
 import useInput from "./../../Hooks/useInput";
-import Javascript from './Courses/Javascript'
-import Reactjs from './Courses/Reactjs'
+import Javascript from "./Courses/Javascript";
+import Reactjs from "./Courses/Reactjs";
+import ToggleNoteList from './ToggleNoteList'
 
 export default function Exercise() {
-  
-
-
   return (
     <div className="exersice">
-      <Javascript />
-      <hr />
-      <Reactjs />
+      <div className="container">
+        <ToggleNoteList />
+      </div>
     </div>
-  )
+  );
 }
