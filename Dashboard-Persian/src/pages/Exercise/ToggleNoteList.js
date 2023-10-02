@@ -1,17 +1,13 @@
 import React, { useState } from "react";
 import "./ToggleNoteList.css";
+import Toggle from "../../components/HOCs/Toggle";
 
-function ToggleNoteList() {
-  const [isShow, setIsShow] = useState(false);
-
-  const toggleHandler = () => {
-    console.log("toggle");
-    setIsShow(prevIsShow => !prevIsShow)
-  };
+function ToggleNoteList({ isShow, toggleHandler }) {
+    
   return (
     <div>
       <button onClick={toggleHandler} className="btn btn-primary mt-5">
-        {isShow ? '-' : '+'}
+        {isShow ? "-" : "+"}
       </button>
 
       {isShow && (
@@ -27,4 +23,4 @@ function ToggleNoteList() {
   );
 }
 
-export default ToggleNoteList;
+export default Toggle(ToggleNoteList)

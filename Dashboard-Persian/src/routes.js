@@ -4,6 +4,7 @@ import Products from './pages/Products/Products'
 import Product from './pages/Product/Product'
 import Currency from './pages/Currency/Currency'
 import Updates from './pages/Updates/Updates'
+import Quests from './pages/Questions/Quests'
 import Exercise from './pages/Exercise/Exercise'
 
 let routes = [
@@ -13,6 +14,7 @@ let routes = [
     { path: "/product/:productID", element: <Product /> },
     { path: "/currency", element: <Currency /> },
     { path: "/updates", element: <Updates /> },
+    { path: "/quests", element: <Quests /> },
     { path: "/exercise", element: <Exercise /> },
   ];
   
