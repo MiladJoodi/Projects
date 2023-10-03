@@ -4,6 +4,8 @@ import Navbar from "./Components/Navbar/Navbar";
 import ProductsSection from "./Components/ProductsSection/ProductsSection";
 import products from "./products";
 import { useState } from "react";
+import Toast from "./Components/Toast/Toast";
+import Cart from "./Components/Cart/Cart";
 
 function App() {
   const [allProducts, setAllProducts] = useState(products);
@@ -20,6 +22,9 @@ function App() {
           ))}
         </div>
       </main>
+      <Toast />
+      <Cart />
+
     </div>
   );
 }
