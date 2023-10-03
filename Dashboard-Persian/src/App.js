@@ -7,6 +7,7 @@ import Topbar from "./components/Topbar/Topbar";
 import Sidebar from "./components/Sidebar/Sidebar";
 import Currency from "./pages/Currency/Currency";
 import Updates from "./pages/Updates/Updates";
+import Cats from "./pages/Cats/Cats";
 import Exercise from "./pages/Exercise/Exercise";
 import { useEffect, useState } from "react";
 

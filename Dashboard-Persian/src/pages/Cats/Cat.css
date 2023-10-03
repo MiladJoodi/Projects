@@ -1,0 +1,16 @@
+
+.btn-container{
+    margin-top: 15px;
+}
+.filter-btn{
+    padding: 10px 15px;
+    border: none;
+    outline: none;
+    background-color: #f6f8fa;
+    margin: 0 5px;
+    border: 1px solid #e7e7e7;
+    /* border-radius: 10px; */
+}
+.highlight{
+    background-color: #e3e4e6;
+}
