@@ -14,7 +14,7 @@
     color: var(--dark);
 }
 
-.price {
+.price { 
     background: var(--dark);
     color: var(--white);
     padding: 3px 8px;
@@ -30,4 +30,13 @@
     padding: 3px 8px;
     display: block;
     margin-top: 15px;
+}
+.card-img-container{
+    height: 210px;
+    border: 1px solid rgb(235, 235, 235);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+    border-radius: 5px;
 }
