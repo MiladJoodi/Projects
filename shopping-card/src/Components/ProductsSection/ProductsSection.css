@@ -1,0 +1,33 @@
+.card {
+    border-radius: 10px;
+    background-color: var(--white);
+    box-shadow: 5px 5px 10px 10px rgba(0, 0, 0, 0.3);
+    transition: 0.5s;
+}
+
+.card:hover {
+    border: 1px groove rgb(0, 0, 0, 0.5);
+}
+
+.card-text {
+    font-size: 15px;
+    color: var(--dark);
+}
+
+.price {
+    background: var(--dark);
+    color: var(--white);
+    padding: 3px 8px;
+    border-radius: 3px;
+    display: inline-block;
+}
+
+.number {
+    background-color: var(--dark);
+    color: var(--white);
+    font-family: monospace;
+    border-radius: 3px;
+    padding: 3px 8px;
+    display: block;
+    margin-top: 15px;
+}
