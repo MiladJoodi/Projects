@@ -9,6 +9,7 @@ import Reactjs from "./Courses/Reactjs";
 import ToggleNoteList from "./ToggleNoteList";
 import menus from "./data";
 import Categories from "./Categories";
+import Menu from "./Menu";
 
 // const allCategories = ["all", ...new Set(menus.map((menu) => menu.category))];
 const allCategories = ["all", ...new Set(menus.map(menu=> menu.category))]
@@ -20,6 +21,16 @@ export default function Exercise() {
   const [categories, setCategories] = useState(allCategories)
   // const [categories, setCategories] = useState(allCategories);
 
+  const filterMenus = (category)=>{
+    if(category == 'all'){
+      setAllMenu(menus)
+      return 
+    }
+    let filteredMenus = menus.filter(menu=> menu.category === category)
+    setAllMenu(filteredMenus)
+
+  }
+
   return (
     <div className="categories">
       <div className="categoriesWrapper">
@@ -28,7 +39,8 @@ export default function Exercise() {
             <h2>دسترسی آسان</h2>
             <div className="underline"></div>
           </div>
-          <Categories categories={categories} />
+          <Categories categories={categories} filterMenus={filterMenus} />
+          <Menu allMenus={allMenu} />
         </section>
       </div>
     </div>
