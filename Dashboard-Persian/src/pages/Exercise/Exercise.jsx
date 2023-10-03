@@ -6,35 +6,31 @@ import useLocalStorage from "./../../Hooks/useLocalStorage";
 import useInput from "./../../Hooks/useInput";
 import Javascript from "./Courses/Javascript";
 import Reactjs from "./Courses/Reactjs";
-import ToggleNoteList from './ToggleNoteList'
+import ToggleNoteList from "./ToggleNoteList";
+import menus from "./data";
+import Categories from "./Categories";
+
+// const allCategories = ["all", ...new Set(menus.map((menu) => menu.category))];
+const allCategories = ["all", ...new Set(menus.map(menu=> menu.category))]
 
 export default function Exercise() {
+  console.log(allCategories);
 
-  const [number, setNumber] = useState(0)
-  const [divStyle, setDivStyle] = useState({})
-  const sectionRef = useRef()
-
-  useEffect(()=>{
-    console.log('update');
-    const randomValue = Math.floor(Math.random()*500)
-
-    for (let i =0; i <= 100000; i++){
-      if(i === 100000){
-        setDivStyle({paddingTop: `${randomValue}px`})
-      }
-    }
-
-  },[number])
+  const [allMenu, setAllMenu] = useState(menus);
+  const [categories, setCategories] = useState(allCategories)
+  // const [categories, setCategories] = useState(allCategories);
 
   return (
-    <div className="exersice">
-      <section ref={sectionRef} style={divStyle}>
-        <p>{number}</p>
-        <div>
-          <button onClick={()=> setNumber(prevNumber=> prevNumber - 1)}>-</button>
-          <button onClick={()=> setNumber(prevNumber=> prevNumber + 1)}>+</button>
-        </div>
-      </section>
+    <div className="categories">
+      <div className="categoriesWrapper">
+        <section className="menu section">
+          <div className="title">
+            <h2>دسترسی آسان</h2>
+            <div className="underline"></div>
+          </div>
+          <Categories categories={categories} />
+        </section>
+      </div>
     </div>
   );
 }
