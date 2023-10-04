@@ -2,18 +2,39 @@
     margin: 0;
     padding: 0;
 }
-.navbar{
-    padding: 0;
-}
 .navbarShopContainer{
     box-shadow: 0 10px 10px rgba(0, 0, 0, .3);
     color: #fff;
-    padding: 15px;
+    padding: 10px 20px;
     background-color: #352F44;
     border-bottom-left-radius: 35px;
     border-bottom-right-radius: 35px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 }
-.navbarLeft{
-    /* font-family: 'IranSans'; */
-    
+.basket{
+    position: relative;
+    margin-left: 15px;
+}
+.basketIcon{
+    font-size: 24px;
+}
+.basketBadge{
+    width: 15px;
+    height: 15px;
+    background-color: red;
+    border-radius: 100%;
+    position: absolute;
+    text-align: center;
+    font-size: 12px;
+}
+input{
+    color: #000 !important;
+    background-color: #ffffffb4 !important;
+    border-radius: 0 10px 10px 0 !important;
+
+}
+.searchBtn{
+   border-radius: 10px 0 0 10px !important;
 }

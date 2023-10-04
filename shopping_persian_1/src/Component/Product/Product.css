@@ -1,0 +1,62 @@
+.priceContainer{
+    text-align: right;
+    padding: 0 15px;
+    font-size: 14px;
+    display: flex;
+    justify-content: space-between;
+align-items: center;
+}
+.monyIcon{
+    color: #FFD700	;
+    font-size: 22px;
+    margin-left: 5px;
+}
+.party{
+    background-color: red;
+    color: #fff;
+    border-radius: 10px;
+    
+
+}
+.price{
+    color: red;
+    font-weight: 600;
+}
+.productBtns {
+    display: flex;
+    justify-content: stretch;
+    gap: 10px;
+    padding: 10px;
+}
+
+.productBtns button {
+    flex: 1;
+    outline: none;
+    border: none;
+    /* background-color: #5C5470; */
+    font-size: 14px;
+}
+
+.card {
+    padding-bottom: 15px;
+    display: flex;
+    justify-content: center;
+
+}
+.card-img-top{
+    align-self: center;
+}
+.countContainer{
+    display: flex;
+    gap: 5px;
+    padding: 0 10px;
+    font-size: 10px;
+    color: rgb(172, 172, 172);
+    background-color: rgb(240, 240, 240);
+    /* border-radius: 5px; */
+}
+.card-text{
+    height: 50px;
+    overflow: hidden;
+    font-weight: 600;
+}

@@ -1,3 +1,10 @@
 .App{
   font-family: 'IranSans';
 }
+.productsContainer{
+  display: grid;
+  gap: 25px;
+  grid-template-columns: repeat(4 ,1fr);
+  justify-content: center;
+
+}
