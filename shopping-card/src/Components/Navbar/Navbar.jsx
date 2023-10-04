@@ -1,8 +1,12 @@
-import React from 'react'
+import React, { useContext} from 'react'
 import { BsBag} from 'react-icons/bs'
 import './Navbar.css'
+import productContext from "./../../Context/ProductsContext";
+
 
 export default function Navbar() {
+  const contextData = useContext(productContext);
+
   return (
     <div className='navbar navbar-expand-sm py-3 d-flex'>
         <div className="container">
@@ -18,9 +22,9 @@ export default function Navbar() {
                 </li>
             </ul>
             <div className='bag-box'>
-                <a href="" className='bag'>
-                    <BsBag className='text-white' />
-                    <span className='bag-products-counter'>0</span>
+                <a href="javascript:void(0)" className='bag'>
+                    <BsBag className='text-white' onClick={()=> contextData.setIsShowCart(true)} />
+                    <span className='bag-products-counter'>{contextData.userCart.length}</span>
                 </a>
             </div>
         </div>
