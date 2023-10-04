@@ -1,0 +1,19 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.navbar{
+    padding: 0;
+}
+.navbarShopContainer{
+    box-shadow: 0 10px 10px rgba(0, 0, 0, .3);
+    color: #fff;
+    padding: 15px;
+    background-color: #352F44;
+    border-bottom-left-radius: 35px;
+    border-bottom-right-radius: 35px;
+}
+.navbarLeft{
+    /* font-family: 'IranSans'; */
+    
+}

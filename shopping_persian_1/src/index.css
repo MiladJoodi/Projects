@@ -1,0 +1,28 @@
+@font-face {
+  font-family: 'Samim';
+  src: url('../public/fonts/Samim.woff') format('woff'), url('../public/fonts/Samim.woff2') format('woff2')
+}
+@font-face {
+  font-family: 'IranSans';
+  src: url('../public/fonts/IRANSansWeb.woff') format('woff'), url('../public/fonts/IRANSansWeb.woff2') format('woff2')
+}
+html{
+  font-family: 'IranSans';
+}
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  direction: rtl;
+  margin: 0;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
+    monospace;
+}
