@@ -41,7 +41,9 @@ export default function Product({title,infos}) {
           {products.infos.map(product =>(
                     <div className="product col-xl-3 col-lg-4 col-md-5 col-sm-10">
                     <div class="card py-3">
-                    <img src={product.img} className="card-img-top w-75" alt="Sunset Over the Sea"/>
+                      <div className="productImgContainer">
+                          <img src={product.img} className="card-img-top w-75" alt="Sunset Over the Sea"/>
+                      </div>
                    <div class="card-body">
                    <p class="card-text">{product.title}</p>
                    </div>

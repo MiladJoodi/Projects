@@ -11,12 +11,14 @@ export default function Cart() {
     contextData.setIsShowCart(false)
   }
 
-  const cartDeleteProduct = (event)=>{
-    event.preventDefault()
-
+  const cartDeleteProduct = (productID)=>{
+    // event.preventDefault()
+    console.log(productID);
+    contextData.setUserCart(contextData.userCart.filter(user=> user.id !== productID ))
     
-    // contextData.setUserCart(contextData.userCart.filter(cart=> cart.title !== event.target.title))
-    // console.log(contextData.userCart);
+  }
+  if(contextData.userCart.length === 0){
+    contextData.setIsShowCart(false)
   }
 
 
@@ -32,11 +34,10 @@ export default function Cart() {
         {contextData.userCart.map(userProduct=> (
           <div className="cartProductContainer" key={userProduct.id}>
           <img src={userProduct.img} className="cartProductImg" />
-          {console.log(userProduct)}
           <div className="cartProductDetails">
             <span className="cartProductTitle">{userProduct.title}</span>
             <span className="cartProductPrice">{userProduct.price} تومان</span>
-            <div className="cartProductDeleteContainer" onClick={(event)=> cartDeleteProduct(event)}>
+            <div className="cartProductDeleteContainer" onClick={()=> cartDeleteProduct(userProduct.id)}>
               <a href="javascript:void(0)" className="btn btn-outline-danger cartProductDelete" data-mdb-ripple-color="dark" >
               <MdOutlineDelete className="cartDeleteBtn" />
               حذف از سبد خرید
@@ -46,7 +47,10 @@ export default function Cart() {
         </div>
         ))}
         {/* cart product */}
-
+        {contextData.userCart.length > 0 && 
+        <button className="btn btn-success cardFinalyBtn text-center">نهایی کردن سفارش</button>
+        }
+          
       </div>
     </div>
   );

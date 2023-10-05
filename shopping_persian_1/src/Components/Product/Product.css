@@ -43,10 +43,9 @@ align-items: center;
 }
 
 .card {
-    padding-bottom: 15px;
     display: flex;
     justify-content: center;
-    height: 450px !important;
+    height: 380px !important;
 
 }
 .card-img-top{
@@ -65,4 +64,14 @@ align-items: center;
     height: 50px;
     overflow: hidden;
     font-weight: 600;
+}
+.productImgContainer{
+    height: 220px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.card-body{
+    padding: 15px 21px 0 0 !important;
+    flex: 0 !important;
 }
