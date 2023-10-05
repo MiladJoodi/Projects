@@ -8,7 +8,8 @@ export default function Navbar() {
   const contextData = useContext(ProductContext)
 
   const basketIconHandler = ()=>{
-    contextData.setIsShowCart(true)
+contextData.setIsShowCart(prevShow => !prevShow)
+    
   }
 
   return (
@@ -33,7 +34,7 @@ export default function Navbar() {
         <div className="navbarLeft">
           <div className="basket">
             <HiOutlineShoppingCart className="basketIcon" onClick={basketIconHandler} />
-            <span className="basketBadge">3</span>
+            <span className="basketBadge">{contextData.userCart.length}</span>
           </div>
         </div>
       </div>

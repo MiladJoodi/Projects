@@ -9,8 +9,16 @@ export default function Cart() {
 
   const closeBtnhandler = ()=>{
     contextData.setIsShowCart(false)
-
   }
+
+  const cartDeleteProduct = (event)=>{
+    event.preventDefault()
+
+    
+    // contextData.setUserCart(contextData.userCart.filter(cart=> cart.title !== event.target.title))
+    // console.log(contextData.userCart);
+  }
+
 
   return (
     <div className={` ${contextData.isShowCart ? 'active' : ''} cart`}>
@@ -20,17 +28,25 @@ export default function Cart() {
         <button type="button" class="btn-close" aria-label="Close" onClick={closeBtnhandler}></button>
         </div>
         <hr />
-        <div className="cartProductContainer">
-          <img src="./images/1.jpg" className="cartProductImg" />
+        {/* cart product */}
+        {contextData.userCart.map(userProduct=> (
+          <div className="cartProductContainer" key={userProduct.id}>
+          <img src={userProduct.img} className="cartProductImg" />
+          {console.log(userProduct)}
           <div className="cartProductDetails">
-            <span className="cartProductTitle">گوشی سامسونگ A51</span>
-            <span className="cartProductPrice">12,000,000 تومان</span>
-            <span className="cartProductDelete">
+            <span className="cartProductTitle">{userProduct.title}</span>
+            <span className="cartProductPrice">{userProduct.price} تومان</span>
+            <div className="cartProductDeleteContainer" onClick={(event)=> cartDeleteProduct(event)}>
+              <a href="javascript:void(0)" className="btn btn-outline-danger cartProductDelete" data-mdb-ripple-color="dark" >
               <MdOutlineDelete className="cartDeleteBtn" />
-              <p>حذف از سبد خرید</p>
-            </span>
+              حذف از سبد خرید
+              </a>
+            </div>
           </div>
         </div>
+        ))}
+        {/* cart product */}
+
       </div>
     </div>
   );

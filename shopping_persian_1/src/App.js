@@ -5,9 +5,12 @@ import Cart from "./Components/Cart/Cart";
 import ProductContext from "./Components/Context/ProductContext";
 import { useState } from "react";
 import Toast from "./Components/Toast/Toast";
+import products from "./products";
 
 
 function App() {
+  const [allProducts, setAllProducts] = useState(products);
+  const [userCart, setUserCart] = useState([])
   const [isShowCart, setIsShowCart] = useState(false);
   const [isShowToast, setIsShowToast] = useState(false);
 
@@ -19,15 +22,19 @@ function App() {
           setIsShowCart,
           isShowToast,
           setIsShowToast,
+          allProducts,
+          userCart,
+          setUserCart
         }}
       >
         <Navbar />
 
-        <div className="productsContainer container mt-5">
-          <Product />
-          <Product />
-          <Product />
-          <Product />
+
+
+        <div className="productsContainer container">
+          {allProducts.map(product=> (
+            <Product {...product} />
+          ))}
         </div>
         <Cart />
         <Toast />
