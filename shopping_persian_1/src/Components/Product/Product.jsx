@@ -1,9 +1,20 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Product.css";
 import { MdOutlineAttachMoney } from "react-icons/md";
-
+import ProductContext from "../Context/ProductContext";
+import Toast from "../Toast/Toast";
 
 export default function Product() {
+  const contextData = useContext(ProductContext)
+
+  const buyHandler = ()=>{
+    contextData.setIsShowToast(true)
+
+    setTimeout(() => {
+      contextData.setIsShowToast(false)
+    }, 1000);
+  }
+
   return (
     <div className="product">
       <div class="card" style={{width: '18rem'}}>
@@ -26,7 +37,7 @@ export default function Product() {
      </div>
      <div className="productBtns">
      <button type="button" class="btn btn-secondary">جزئیات بیشتر</button>
-     <button type="button" class="btn btn-secondary">خرید</button>
+     <button type="button" class="btn btn-secondary" onClick={buyHandler}>خرید</button>
      </div>
 
       </div>

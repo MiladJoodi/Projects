@@ -16,6 +16,8 @@
 .basket{
     position: relative;
     margin-left: 15px;
+    cursor: pointer;
+
 }
 .basketIcon{
     font-size: 24px;

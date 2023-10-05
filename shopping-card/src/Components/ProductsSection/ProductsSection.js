@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import productContext from "./../../Context/ProductsContext";
+import productContext from "../Context/ProductsContext";
 import "./ProductsSection.css";
 
 export default function ProductsSection({ title, infos }) {

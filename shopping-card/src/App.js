@@ -6,7 +6,7 @@ import products from "./products";
 import { useState } from "react";
 import Toast from "./Components/Toast/Toast";
 import Cart from "./Components/Cart/Cart";
-import productContext from "./Context/ProductsContext";
+import productContext from "./Components/Context/ProductsContext";
 
 function App() {
   const [allProducts, setAllProducts] = useState(products);

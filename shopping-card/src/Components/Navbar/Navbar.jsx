@@ -1,7 +1,7 @@
 import React, { useContext} from 'react'
 import { BsBag} from 'react-icons/bs'
 import './Navbar.css'
-import productContext from "./../../Context/ProductsContext";
+import productContext from "../Context/ProductsContext";
 
 
 export default function Navbar() {

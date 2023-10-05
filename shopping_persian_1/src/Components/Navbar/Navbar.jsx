@@ -1,8 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import "./Navbar.css";
 import { HiOutlineShoppingCart } from "react-icons/hi2";
+import ProductContext from "../Context/ProductContext";
 
 export default function Navbar() {
+
+  const contextData = useContext(ProductContext)
+
+  const basketIconHandler = ()=>{
+    contextData.setIsShowCart(true)
+  }
+
   return (
     <div className="navbarShop">
       <div className="navbarShopContainer">
@@ -24,7 +32,7 @@ export default function Navbar() {
         </div>
         <div className="navbarLeft">
           <div className="basket">
-            <HiOutlineShoppingCart className="basketIcon" />
+            <HiOutlineShoppingCart className="basketIcon" onClick={basketIconHandler} />
             <span className="basketBadge">3</span>
           </div>
         </div>

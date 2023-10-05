@@ -2,7 +2,7 @@ import React, { useContext} from 'react';
 import './Cart.css';
 import { BsBag} from 'react-icons/bs';
 import { AiOutlineClose} from 'react-icons/ai';
-import productContext from "./../../Context/ProductsContext";
+import productContext from "../Context/ProductsContext";
 
 
 export default function Cart() {
