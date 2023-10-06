@@ -2,7 +2,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    width: 180%;
+    /* width: 180%; */
 }
 
 .admin-profile {
@@ -61,10 +61,11 @@
     align-items: center;
     font-size: 1.1rem;
     width: 135px;
+    height: 40px;
     border-radius: 10px;
     background-color: var(--blue);
     color: var(--white);
-    text-align: center;
+    /* text-align: center; */
     justify-content: center;
     box-shadow: rgba(149, 157, 165, 0.8) 0 8px 24px;
 
