@@ -1,0 +1,17 @@
+.details-modal{
+    padding: 30px;
+    background-color: var(--white);
+    font-size: 1.3rem;
+}
+.cmd-table{
+     margin-top: 20px;
+     width: 100%;
+     border-radius: 10px;
+     background-color: var(--white);
+}
+.cmd-table tr{
+    text-align: center;
+}
+.cmd-table th, .cmd-table td{
+    padding: 20px;
+}

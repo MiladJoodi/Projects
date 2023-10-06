@@ -4,21 +4,22 @@ import DeleteModal from "./../DeleteModal/DeleteModal";
 import DetailsModal from "./../DetailsModal/DetailsModal";
 
 export default function ProductsTable() {
-  const [isShowModal, setIsShowModal] = useState(false);
+  const [isShowDeleteModal, setIsShowDeleteModal] = useState(false);
+  const [isShowDetailsModal, setIsShowDetailsModal] = useState(false);
 
   const deleteModalCancelAction = () => {
-    console.log("مدال کنسل شد");
-    setIsShowModal(false);
+    console.log("مودال کنسل شد");
+    setIsShowDeleteModal(false);
   };
 
   const deleteModalSubmitAction = () => {
-    console.log("مدال تایید شد");
-    setIsShowModal(false);
+    console.log("مودال تایید شد");
+    setIsShowDeleteModal(false);
   };
 
   return (
     <>
-    <DetailsModal />
+    
       <table className="products-table">
         <thead>
           <tr className="products-table-heading-tr">
@@ -42,10 +43,10 @@ export default function ProductsTable() {
             <td>92000 تومان</td>
             <td>82</td>
             <td>
-              <button className="products-table-btn">جزییات</button>
+              <button className="products-table-btn" onClick={()=> setIsShowDetailsModal(true)}>جزییات</button>
               <button
                 className="products-table-btn"
-                onClick={() => setIsShowModal(true)}
+                onClick={() => setIsShowDeleteModal(true)}
               >
                 حذف
               </button>
@@ -54,12 +55,14 @@ export default function ProductsTable() {
           </tr>
         </tbody>
       </table>
-      {isShowModal && (
+      {isShowDeleteModal && (
         <DeleteModal
           submitAction={deleteModalSubmitAction}
           cancelAction={deleteModalCancelAction}
         />
       )}
+      {isShowDetailsModal && <DetailsModal />}
     </>
   );
 }
+<DetailsModal />
