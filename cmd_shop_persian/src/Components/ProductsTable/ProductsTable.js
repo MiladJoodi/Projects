@@ -2,6 +2,8 @@ import React, { useState } from "react";
 import "./ProductsTable.css";
 import DeleteModal from "./../DeleteModal/DeleteModal";
 import DetailsModal from "./../DetailsModal/DetailsModal";
+import EditModal from "./../EditModal/EditModal";
+
 
 export default function ProductsTable() {
   const [isShowDeleteModal, setIsShowDeleteModal] = useState(false);
@@ -16,6 +18,11 @@ export default function ProductsTable() {
     console.log("مودال تایید شد");
     setIsShowDeleteModal(false);
   };
+
+  const closeDetailsModal = ()=>{
+    setIsShowDetailsModal(false)
+    console.log('closed');
+  }
 
   return (
     <>
@@ -61,7 +68,8 @@ export default function ProductsTable() {
           cancelAction={deleteModalCancelAction}
         />
       )}
-      {isShowDetailsModal && <DetailsModal />}
+      {isShowDetailsModal && <DetailsModal onHide={closeDetailsModal} />}
+      <EditModal />
     </>
   );
 }
