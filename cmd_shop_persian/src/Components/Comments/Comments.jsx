@@ -1,13 +1,12 @@
-import React from "react";
-import "./Comments.css";
-import Errorbox from "../Errorbox/Errorbox";
-import DeleteModal from "../DeleteModal/DeleteModal";
+import React from 'react'
+import DeleteModal from '../DeleteModal/DeleteModal'
+import ErrorBox from '../Errorbox/Errorbox'
 
 export default function Comments() {
   return (
     <>
-      <Errorbox msg="هیچ سفارشی یافت نشد" />
-      <DeleteModal />
+    <ErrorBox msg="هیچ کامنتی یافت نشد" />
+    {/* <DeleteModal /> */}
     </>
-  );
+  )
 }

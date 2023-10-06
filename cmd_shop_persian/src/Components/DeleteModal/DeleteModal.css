@@ -1,23 +1,3 @@
-.modal-parent{
-    position: fixed;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    z-index: 2;
-    width: 100%;
-    height: 100vh;
-    background-color: rgba(0, 0, 0, 0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    opacity: 0;
-    visibility: hidden;
-    transition: 0.4s;
-}
-.modal-parent.active{
-    opacity: 1;
-    visibility: visible;
-}
 .delete-modal{
     background-color: var(--white);
     padding: 50px;
