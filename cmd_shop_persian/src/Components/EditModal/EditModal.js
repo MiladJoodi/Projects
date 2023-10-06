@@ -1,7 +1,19 @@
-import React from 'react'
+import React, {useEffect} from 'react'
 import './EditModal.css'
 
 export default function EditModal({children, onClose, onSubmit}) {
+
+    useEffect(()=>{
+        const checkKey = (event)=>{
+          if(event.keyCode === 27){
+            onClose()
+          }
+        }
+        window.addEventListener('keydown', checkKey)
+    
+        return ()=> window.removeEventListener('keydown', checkKey)
+      })
+
   return (
     <div className='modal-parent active'>
         <form className='edit-modal-form'>
@@ -9,7 +21,7 @@ export default function EditModal({children, onClose, onSubmit}) {
 
         {children}
 
-        <button className='edit-form-submit'>ثبت اطلاعات جدید</button>
+        <button className='edit-form-submit' onClick={onSubmit}>ثبت اطلاعات جدید</button>
         </form>
     </div>
   )

@@ -9,4 +9,9 @@
 }
 .edit-form-submit{
     margin-top: 20px;
+    width: 100%;
+    padding: 8px 10px;
+    background-color: var(--blue);
+    color: var(--white);
+    font-size: 1.1rem;
 }

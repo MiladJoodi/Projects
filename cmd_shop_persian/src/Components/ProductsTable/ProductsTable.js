@@ -4,10 +4,10 @@ import DeleteModal from "./../DeleteModal/DeleteModal";
 import DetailsModal from "./../DetailsModal/DetailsModal";
 import EditModal from "./../EditModal/EditModal";
 
-
 export default function ProductsTable() {
   const [isShowDeleteModal, setIsShowDeleteModal] = useState(false);
   const [isShowDetailsModal, setIsShowDetailsModal] = useState(false);
+  const [isShowEditModal, setIsShowEditModal] = useState(false);
 
   const deleteModalCancelAction = () => {
     console.log("مودال کنسل شد");
@@ -19,14 +19,18 @@ export default function ProductsTable() {
     setIsShowDeleteModal(false);
   };
 
-  const closeDetailsModal = ()=>{
-    setIsShowDetailsModal(false)
-    console.log('closed');
+  const closeDetailsModal = () => {
+    setIsShowDetailsModal(false);
+    console.log("closed");
+  };
+
+  const updateProductInfos = (event)=>{
+    event.preventDefault()
+    console.log('ویرایش شد');
   }
 
   return (
     <>
-    
       <table className="products-table">
         <thead>
           <tr className="products-table-heading-tr">
@@ -50,14 +54,19 @@ export default function ProductsTable() {
             <td>92000 تومان</td>
             <td>82</td>
             <td>
-              <button className="products-table-btn" onClick={()=> setIsShowDetailsModal(true)}>جزییات</button>
+              <button
+                className="products-table-btn"
+                onClick={() => setIsShowDetailsModal(true)}
+              >
+                جزییات
+              </button>
               <button
                 className="products-table-btn"
                 onClick={() => setIsShowDeleteModal(true)}
               >
                 حذف
               </button>
-              <button className="products-table-btn">ویرایش</button>
+              <button className="products-table-btn" onClick={()=> setIsShowEditModal(true)}>ویرایش</button>
             </td>
           </tr>
         </tbody>
@@ -69,8 +78,12 @@ export default function ProductsTable() {
         />
       )}
       {isShowDetailsModal && <DetailsModal onHide={closeDetailsModal} />}
-      <EditModal />
+      {isShowEditModal && <EditModal 
+      
+      onClose={() => setIsShowEditModal(false)}
+      onSubmit={updateProductInfos}
+      />}
     </>
   );
 }
-<DetailsModal />
+<DetailsModal />;
