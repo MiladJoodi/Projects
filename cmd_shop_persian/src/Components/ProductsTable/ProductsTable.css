@@ -37,3 +37,23 @@
     background-color: var(--blue);
     margin-right: 20px;
 }
+/* start childs styles */
+.edit-products-form-group{
+    margin-top: 15px;
+    display: flex;
+    align-items: center;
+    column-gap: 10px;
+    width: 100%;
+    background-color: #f4f4f4;
+    padding: 0 20px;
+    border-radius: 10px;
+}
+.edit-product-input{
+    outline: none;
+    border: none;
+    background-color: unset;
+    font-size: 1.1rem;
+    width: 100%;
+    padding: 8px 10px;
+}
+/* end childs styles */
