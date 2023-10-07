@@ -1,0 +1,51 @@
+1. Products
+    id
+    title 
+    price
+    count
+    img
+    popularity
+    sale
+    colors
+
+2. Comments
+    id
+    body
+    date
+    hour
+    userID (foreign Key => id (Users))
+    productID (foreign Key => id (Products))
+
+3. Users
+    id
+    firsname
+    lastname
+    username
+    password
+    phone
+    email
+    city
+    address
+    score
+    buy
+
+4. Orders
+    id
+    productID (foreign Key => id (Products))
+    userID (foreign Key => id (Users))
+    date
+    hour
+    price
+    off
+    sale
+    popularity
+    count
+    sale_count
+
+5. Offs
+    id
+    code
+    percent
+    adminID (foreign Key => id (Admins))
+    productID (foreign Key => id (Products))
+    date

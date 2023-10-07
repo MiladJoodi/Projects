@@ -1,14 +1,27 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./ProductsTable.css";
 import DeleteModal from "./../DeleteModal/DeleteModal";
 import DetailsModal from "./../DetailsModal/DetailsModal";
 import EditModal from "./../EditModal/EditModal";
-import { AiOutlineDollarCircle } from 'react-icons/ai'
+import { AiOutlineDollarCircle } from "react-icons/ai";
+import Errorbox from "../Errorbox/Errorbox";
 
 export default function ProductsTable() {
   const [isShowDeleteModal, setIsShowDeleteModal] = useState(false);
   const [isShowDetailsModal, setIsShowDetailsModal] = useState(false);
   const [isShowEditModal, setIsShowEditModal] = useState(false);
+  const [allProducts, setAllProducts] = useState([]);
+  const [productID, setProductID] = useState(null)
+
+  useEffect(() => {
+    getAllProducts()
+  }, []);
+  
+  const getAllProducts = ()=>{
+    fetch("http://localhost:8000/api/products/")
+    .then(res => res.json())
+    .then((products) => setAllProducts(products))
+  }
 
   const deleteModalCancelAction = () => {
     console.log("مودال کنسل شد");
@@ -16,8 +29,15 @@ export default function ProductsTable() {
   };
 
   const deleteModalSubmitAction = () => {
-    console.log("مودال تایید شد");
-    setIsShowDeleteModal(false);
+    console.log("مدال تایید شد");
+    fetch(`http://localhost:8000/api/products/${productID}`, {
+      method: 'DELETE'
+    }).then(res => res.json())
+    .then(result => {
+      setIsShowDeleteModal(false);
+      getAllProducts()
+    })
+
   };
 
   const closeDetailsModal = () => {
@@ -25,53 +45,64 @@ export default function ProductsTable() {
     console.log("closed");
   };
 
-  const updateProductInfos = (event)=>{
-    event.preventDefault()
-    console.log('ویرایش شد');
-  }
+  const updateProductInfos = (event) => {
+    event.preventDefault();
+    console.log("ویرایش شد");
+  };
 
   return (
     <>
-      <table className="products-table">
-        <thead>
-          <tr className="products-table-heading-tr">
-            <th>عکس</th>
-            <th>اسم</th>
-            <th>قیمت</th>
-            <th>موجودی</th>
-          </tr>
-        </thead>
+      {allProducts.length ? (
+        <table className="products-table">
+          <thead>
+            <tr className="products-table-heading-tr">
+              <th>عکس</th>
+              <th>اسم</th>
+              <th>قیمت</th>
+              <th>موجودی</th>
+            </tr>
+          </thead>
+          <tbody>
+            {allProducts.map((product) => (
+              <tr key={product.id} className="products-table-tr">
+                <td>
+                  <img src={product.img} className="products-table-img" />
+                </td>
+                <td>{product.title}</td>
+                <td>{product.price} تومان</td>
+                <td>{product.count}</td>
+                <td>
+                  <button
+                    className="products-table-btn"
+                    onClick={() => setIsShowDetailsModal(true)}
+                  >
+                    جزییات
+                  </button>
+                  <button
+                    className="products-table-btn"
+                    onClick={() => {
+                      setIsShowDeleteModal(true)
+                      setProductID(product.id)
+                      console.log(product.id);
+                    }}
+                  >
+                    حذف
+                  </button>
+                  <button
+                    className="products-table-btn"
+                    onClick={() => setIsShowEditModal(true)}
+                  >
+                    ویرایش
+                  </button>
+                </td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      ) : (
+        <Errorbox msg="هیچ محصولی یافت نشد" />
+      )}
 
-        <tbody>
-          <tr className="products-table-tr">
-            <td>
-              <img
-                src="/img/oil.jpeg"
-                alt="oil image"
-                className="products-table-img"
-              />
-            </td>
-            <td>روغن سرخ کردنی</td>
-            <td>92000 تومان</td>
-            <td>82</td>
-            <td>
-              <button
-                className="products-table-btn"
-                onClick={() => setIsShowDetailsModal(true)}
-              >
-                جزییات
-              </button>
-              <button
-                className="products-table-btn"
-                onClick={() => setIsShowDeleteModal(true)}
-              >
-                حذف
-              </button>
-              <button className="products-table-btn" onClick={()=> setIsShowEditModal(true)}>ویرایش</button>
-            </td>
-          </tr>
-        </tbody>
-      </table>
       {isShowDeleteModal && (
         <DeleteModal
           submitAction={deleteModalSubmitAction}
@@ -79,42 +110,58 @@ export default function ProductsTable() {
         />
       )}
       {isShowDetailsModal && <DetailsModal onHide={closeDetailsModal} />}
-      {isShowEditModal && <EditModal
-      onClose={() => setIsShowEditModal(false)}
-      onSubmit={updateProductInfos}
-      >
-      {/* child */}
-      <div className="edit-products-form-group">
-        <span>
+      {isShowEditModal && (
+        <EditModal
+          onClose={() => setIsShowEditModal(false)}
+          onSubmit={updateProductInfos}
+        >
+          {/* child */}
+          <div className="edit-products-form-group">
+            <span>
               <AiOutlineDollarCircle />
-        </span>
-        <input type="text" placeholder="عنوان جدید را وارد کنید" className="edit-product-input" />
-      </div>
-            {/* child */}
-            <div className="edit-products-form-group">
-        <span>
+            </span>
+            <input
+              type="text"
+              placeholder="عنوان جدید را وارد کنید"
+              className="edit-product-input"
+            />
+          </div>
+          {/* child */}
+          <div className="edit-products-form-group">
+            <span>
               <AiOutlineDollarCircle />
-        </span>
-        <input type="text" placeholder="عنوان جدید را وارد کنید" className="edit-product-input" />
-      </div>
-            {/* child */}
-            <div className="edit-products-form-group">
-        <span>
+            </span>
+            <input
+              type="text"
+              placeholder="عنوان جدید را وارد کنید"
+              className="edit-product-input"
+            />
+          </div>
+          {/* child */}
+          <div className="edit-products-form-group">
+            <span>
               <AiOutlineDollarCircle />
-        </span>
-        <input type="text" placeholder="عنوان جدید را وارد کنید" className="edit-product-input" />
-      </div>
-            {/* child */}
-            <div className="edit-products-form-group">
-        <span>
+            </span>
+            <input
+              type="text"
+              placeholder="عنوان جدید را وارد کنید"
+              className="edit-product-input"
+            />
+          </div>
+          {/* child */}
+          <div className="edit-products-form-group">
+            <span>
               <AiOutlineDollarCircle />
-        </span>
-        <input type="text" placeholder="عنوان جدید را وارد کنید" className="edit-product-input" />
-      </div>
-
-        </EditModal>}
+            </span>
+            <input
+              type="text"
+              placeholder="عنوان جدید را وارد کنید"
+              className="edit-product-input"
+            />
+          </div>
+        </EditModal>
+      )}
     </>
   );
 }
 <DetailsModal />;
-
