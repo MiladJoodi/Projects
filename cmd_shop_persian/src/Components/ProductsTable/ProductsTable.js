@@ -15,15 +15,15 @@ export default function ProductsTable() {
   const [isShowEditModal, setIsShowEditModal] = useState(false);
   const [allProducts, setAllProducts] = useState([]);
   const [productID, setProductID] = useState(null)
-  const [mainProductsInfo, setMainProductsInfo] = useState({})
+  const [mainProductsInfos, setMainProductsInfos] = useState({})
 
-const [productNewTitle,setproductNewTitle] = useState("")
-const [productNewPrice,setproductNewPrice] = useState("")
-const [productNewCount,setproductNewCount] = useState("")
-const [productNewImg,setproductNewImg] = useState("")
-const [productNewPopularity,setproductNewPopularity] = useState("")
-const [productNewSale,setproductNewSale] = useState("")
-const [productNewColors,setproductNewColors] = useState("")
+const [productNewTitle,setProductNewTitle] = useState("")
+const [productNewPrice,setProductNewPrice] = useState("")
+const [productNewCount,setProductNewCount] = useState("")
+const [productNewImg,setProductNewImg] = useState("")
+const [productNewPopularity,setProductNewPopularity] = useState("")
+const [productNewSale,setProductNewSale] = useState("")
+const [productNewColors,setProductNewColors] = useState("")
 
 
   useEffect(() => {
@@ -32,7 +32,7 @@ const [productNewColors,setproductNewColors] = useState("")
   
   const getAllProducts = ()=>{
     fetch("http://localhost:8000/api/products/")
-    .then(res => res.json())
+    .then((res) => res.json())
     .then((products) => setAllProducts(products))
   }
 
@@ -63,6 +63,33 @@ const [productNewColors,setproductNewColors] = useState("")
 
   const updateProductInfos = (event) => {
     event.preventDefault();
+
+    const productsNewInfos = {
+      title: productNewTitle,
+      price: productNewPrice,
+      count: productNewCount,
+      img: productNewImg,
+      popularity: productNewPopularity,
+      sale: productNewSale,
+      colors: productNewColors,
+    }
+
+    fetch(`http://localhost:8000/api/products/${productID}`,{
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(productsNewInfos)
+    }).then(res => res.json())
+    .then(result=>{
+      console.log(result);
+      getAllProducts()
+      setIsShowEditModal(false);
+      toast.success('ویرایش شد', {
+        toastId: 'success2',
+    })
+    })
+
     console.log("ویرایش شد");
   };
 
@@ -93,7 +120,7 @@ const [productNewColors,setproductNewColors] = useState("")
                     className="products-table-btn"
                     onClick={() => {
                       setIsShowDetailsModal(true)
-                      setMainProductsInfo(product)
+                      setMainProductsInfos(product)
                     }}
                   >
                     جزییات
@@ -110,7 +137,17 @@ const [productNewColors,setproductNewColors] = useState("")
                   </button>
                   <button
                     className="products-table-btn"
-                    onClick={() => setIsShowEditModal(true)}
+                    onClick={() => {
+                      setIsShowEditModal(true)
+                      setProductID(product.id)
+                      setProductNewTitle(product.title)
+                      setProductNewPrice(product.price)
+                      setProductNewCount(product.count)
+                      setProductNewImg(product.img)
+                      setProductNewPopularity(product.popularity)
+                      setProductNewSale(product.sale)
+                      setProductNewColors(product.colors)
+                    }}
                   >
                     ویرایش
                   </button>
@@ -141,9 +178,9 @@ const [productNewColors,setproductNewColors] = useState("")
 
           <tbody>
             <tr>
-              <td>{mainProductsInfo.popularity}</td>
-              <td>{mainProductsInfo.sale.toLocaleString()}</td>
-              <td>{mainProductsInfo.colors}</td>
+              <td>{mainProductsInfos.popularity}</td>
+              <td>{mainProductsInfos.sale.toLocaleString()}</td>
+              <td>{mainProductsInfos.colors}</td>
             </tr>
           </tbody>
         </table>
@@ -162,6 +199,8 @@ const [productNewColors,setproductNewColors] = useState("")
               type="text"
               placeholder="عنوان جدید را وارد کنید"
               className="edit-product-input"
+              value={productNewTitle}
+              onChange={(event)=> setProductNewTitle(event.target.value)}
             />
           </div>
           {/* child */}
@@ -173,6 +212,8 @@ const [productNewColors,setproductNewColors] = useState("")
               type="text"
               placeholder="قیمت جدید را وارد کنید"
               className="edit-product-input"
+              value={productNewPrice.toLocaleString()}
+              onChange={(event)=> setProductNewPrice(event.target.value)}
             />
           </div>
           {/* child */}
@@ -184,6 +225,8 @@ const [productNewColors,setproductNewColors] = useState("")
               type="text"
               placeholder="موجودی جدید را وارد کنید"
               className="edit-product-input"
+              value={productNewCount}
+              onChange={(event)=> setProductNewCount(event.target.value)}
             />
           </div>
           {/* child */}
@@ -195,6 +238,8 @@ const [productNewColors,setproductNewColors] = useState("")
               type="text"
               placeholder="آدرس کاور جدید را وارد کنید"
               className="edit-product-input"
+              value={productNewImg}
+              onChange={(event)=> setProductNewImg(event.target.value)}
             />
           </div>
           {/* child */}
@@ -206,6 +251,8 @@ const [productNewColors,setproductNewColors] = useState("")
               type="text"
               placeholder="محبوبیت جدید محصول را وارد کنید"
               className="edit-product-input"
+              value={productNewPopularity}
+              onChange={(event)=> setProductNewPopularity(event.target.value)}
             />
           </div>
           {/* child */}
@@ -217,6 +264,8 @@ const [productNewColors,setproductNewColors] = useState("")
               type="text"
               placeholder="میزان فروش جدید را وارد کنید"
               className="edit-product-input"
+              value={productNewSale}
+              onChange={(event)=> setProductNewSale(event.target.value)}
             />
           </div>
           {/* child */}
@@ -228,6 +277,8 @@ const [productNewColors,setproductNewColors] = useState("")
               type="text"
               placeholder="رنگ بندی جدید را وارد کنید"
               className="edit-product-input"
+              value={productNewColors}
+              onChange={(event)=> setProductNewColors(event.target.value)}
             />
           </div>
         </EditModal>
