@@ -57,3 +57,5 @@
     padding: 8px 10px;
 }
 /* end childs styles */
+
+.Toastify__toast-body { font-family: 'Lalezar'; }

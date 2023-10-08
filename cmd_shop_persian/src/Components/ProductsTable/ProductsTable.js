@@ -6,6 +6,9 @@ import EditModal from "./../EditModal/EditModal";
 import { AiOutlineDollarCircle } from "react-icons/ai";
 import Errorbox from "../Errorbox/Errorbox";
 
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 export default function ProductsTable() {
   const [isShowDeleteModal, setIsShowDeleteModal] = useState(false);
   const [isShowDetailsModal, setIsShowDetailsModal] = useState(false);
@@ -37,6 +40,9 @@ export default function ProductsTable() {
     .then(result => {
       setIsShowDeleteModal(false);
       getAllProducts()
+      toast.success('حذف شد', {
+        toastId: 'success1',
+    })
     })
 
   };
@@ -50,6 +56,7 @@ export default function ProductsTable() {
     event.preventDefault();
     console.log("ویرایش شد");
   };
+
 
   return (
     <>
@@ -70,7 +77,7 @@ export default function ProductsTable() {
                   <img src={product.img} className="products-table-img" />
                 </td>
                 <td>{product.title}</td>
-                <td>{product.price} تومان</td>
+                <td>{product.price.toLocaleString()} تومان</td>
                 <td>{product.count}</td>
                 <td>
                   <button
@@ -81,7 +88,7 @@ export default function ProductsTable() {
                     }}
                   >
                     جزییات
-                  </button>
+                  </button>  
                   <button
                     className="products-table-btn"
                     onClick={() => {
@@ -126,7 +133,7 @@ export default function ProductsTable() {
           <tbody>
             <tr>
               <td>{mainProductsInfo.popularity}</td>
-              <td>{mainProductsInfo.sale}</td>
+              <td>{mainProductsInfo.sale.toLocaleString()}</td>
               <td>{mainProductsInfo.colors}</td>
             </tr>
           </tbody>
@@ -183,7 +190,8 @@ export default function ProductsTable() {
           </div>
         </EditModal>
       )}
+<ToastContainer autoClose={2000} />
     </>
   );
 }
-<DetailsModal />;
+

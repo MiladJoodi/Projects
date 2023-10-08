@@ -5,6 +5,7 @@ import Header from "./Components/Header/Header";
 import { useRoutes } from "react-router-dom";
 import routes from "./routes";
 
+
 function App() {
   const router = useRoutes(routes);
 
@@ -16,6 +17,7 @@ function App() {
 
         {router}
       </div>
+      
     </>
   );
 }
