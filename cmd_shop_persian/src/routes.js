@@ -6,10 +6,11 @@ import Offs from "./Components/Offs/Offs";
 
 const routes = [
   { path: "/products", element: <Products /> },
-  { path: "/commnets", element: <Comments /> },
+  { path: "/comments", element: <Comments /> },
   { path: "/users", element: <Users /> },
   { path: "/orders", element: <Orders /> },
   { path: "/offs", element: <Offs /> },
 ];
 
 export default routes;
+    
