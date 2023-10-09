@@ -26,7 +26,7 @@ export default function Sidebar() {
           </Link>
         </li>
         <li>
-          <Link to="/commnets">
+          <Link to="/comments">
             <BiCommentDetail className="icon" />
             کامنت ها
           </Link>

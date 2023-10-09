@@ -9,7 +9,7 @@ import { HiOutlinePhoto } from "react-icons/hi2";
 import { AiOutlineBarChart } from "react-icons/ai";
 
 
-export default function AddNewProduct() {
+export default function AddNewProduct({getAllProducts}) {
 
         const [newProductTitle, setNewProductTitle] = useState('')
         const [newProductPrice, setNewProductPrice] = useState('')
@@ -18,6 +18,44 @@ export default function AddNewProduct() {
         const [newProductPopularity, setNewProductPopularity] = useState('')
         const [newProductSale, setNewProductSale] = useState('')
         const [newProductColors, setNewProductColors] = useState('')
+
+        const newProductsInfos = {
+                title: newProductTitle,
+                price: newProductPrice,
+                count: newProductCount,
+                img: newProductImg,
+                popularity: newProductPopularity,
+                sale: newProductSale,
+                colors: newProductColors,
+        }
+
+        const addNewProduct = (event)=>{
+                event.preventDefault()
+                
+                fetch('http://localhost:8000/api/products',{
+                        method: 'POST',
+                        headers: {
+                                'Content-Type': 'application/json'
+                        },
+                        body: JSON.stringify(newProductsInfos)
+                }).then(res => res.json())
+                .then(result => {
+                        console.log(result)
+                        getAllProducts()
+                        emptyInput()
+                })
+                
+        }
+
+        function emptyInput() {
+                setNewProductTitle("")
+                setNewProductPrice("")
+                setNewProductCount("")
+                setNewProductImg("")
+                setNewProductPopularity("")
+                setNewProductSale("")
+                setNewProductColors("")
+        }
 
   return (
     <div className='products-main'>
@@ -67,7 +105,7 @@ export default function AddNewProduct() {
                 </div>
 
             </div>
-            <button className='add-product-submit'>ثبت محصول</button>
+            <button className='add-product-submit' onClick={addNewProduct}>ثبت محصول</button>
         </form>
         
     </div>

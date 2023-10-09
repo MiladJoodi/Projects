@@ -9,11 +9,11 @@ import Errorbox from "../Errorbox/Errorbox";
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
-export default function ProductsTable() {
+export default function ProductsTable({allProducts, getAllProducts}) {
   const [isShowDeleteModal, setIsShowDeleteModal] = useState(false);
   const [isShowDetailsModal, setIsShowDetailsModal] = useState(false);
   const [isShowEditModal, setIsShowEditModal] = useState(false);
-  const [allProducts, setAllProducts] = useState([]);
+
   const [productID, setProductID] = useState(null)
   const [mainProductsInfos, setMainProductsInfos] = useState({})
 
@@ -26,15 +26,7 @@ const [productNewSale,setProductNewSale] = useState("")
 const [productNewColors,setProductNewColors] = useState("")
 
 
-  useEffect(() => {
-    getAllProducts()
-  }, []);
-  
-  const getAllProducts = ()=>{
-    fetch("http://localhost:8000/api/products/")
-    .then((res) => res.json())
-    .then((products) => setAllProducts(products))
-  }
+
 
   const deleteModalCancelAction = () => {
     console.log("مودال کنسل شد");
