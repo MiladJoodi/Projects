@@ -9,7 +9,9 @@ export default function Comments() {
   useEffect(()=>{
     fetch('http://localhost:8000/api/comments/')
     .then(res=> res.json())
-    .then()
+    .then(commnets => {
+      console.log(commnets);
+    })
   },[])
 
   return (
