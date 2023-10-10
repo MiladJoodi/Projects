@@ -105,6 +105,8 @@ export default function Comments() {
   return (
     <div className='cms-main'>
 
+      <h1 className='cms-title'>لیست کامنت ها</h1>
+
     {allComments.length>0 ? (
       <table className='cms-table'>
       <thead>

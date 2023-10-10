@@ -205,7 +205,7 @@ const [productNewColors,setProductNewColors] = useState("")
               type="text"
               placeholder="قیمت جدید را وارد کنید"
               className="edit-product-input"
-              value={productNewPrice.toLocaleString()}
+              value={productNewPrice}
               onChange={(event)=> setProductNewPrice(event.target.value)}
             />
           </div>
