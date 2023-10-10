@@ -2,12 +2,27 @@ import React, { useEffect, useState } from 'react'
 import './Users.css'
 import Errorbox from '../Errorbox/Errorbox'
 import DeleteModal from '../DeleteModal/DeleteModal'
+import EditModal from '../EditModal/EditModal'
+import { AiOutlineDollarCircle } from "react-icons/ai";
+
 
 
 export default function Users() {
   const [users, setUsers] = useState([])
   const [isShowDeleteModal, setIsShowDeleteModal] = useState(false)
-  const [mainUserID, setMainUserID] = useState(null)
+  const [isShowEditModal, setIsShowEditModal] = useState(false)
+  const [mainUserID, setMainUserID] = useState(null) 
+
+  const [userNewFirsname, setUserNewFirsname] = useState('')
+  const [userNewLastname, setUserNewLastname] = useState('')
+  const [userNewUsername, setUserNewUsername] = useState('')
+  const [userNewPassword, setUserNewPassword] = useState('')
+  const [userNewPhone, setUserNewPhone] = useState('')
+  const [userNewCity, setUserNewCity] = useState('')
+  const [userNewEmail, setUserNewEmail] = useState('')
+  const [userNewAddress, setUserNewAddress] = useState('')
+  const [userNewScore, setUserNewScore] = useState('')
+  const [userNewBuy, setUserNewBuy] = useState('')
 
   useEffect(()=>{
     getAllUsers()
@@ -23,6 +38,7 @@ export default function Users() {
   }
 
   const closeDeleteModal = ()=> setIsShowDeleteModal(false)
+  const closeEditModal = ()=> setIsShowEditModal(false)
 
   const removeUser = ()=>{
     console.log('کاربر ریمو شد');
@@ -34,6 +50,12 @@ export default function Users() {
       setIsShowDeleteModal(false)
 
     })
+  }
+  
+  const updateUser = (event)=> {
+    event.preventDefault()
+    console.log('user updated');
+    setIsShowEditModal(false)
   }
 
   return (
@@ -65,7 +87,20 @@ export default function Users() {
             setMainUserID(user.id)
           }}>حذف</button>
           <button>نمایش جزئیات</button>
-          <button>ویرایش</button>
+          <button onClick={()=> {
+            setIsShowEditModal(true)
+            setMainUserID(user.id)
+            setUserNewFirsname(user.firsname)
+            setUserNewLastname(user.lastname)
+            setUserNewUsername(user.username)
+            setUserNewPassword(user.password)
+            setUserNewPhone(user.phone)
+            setUserNewCity(user.city)
+            setUserNewEmail(user.email)
+            setUserNewAddress(user.address)
+            setUserNewScore(user.score)
+            setUserNewBuy(user.buy)
+          }}>ویرایش</button>
         </td>
       </tr>
       ))}
@@ -80,10 +115,87 @@ export default function Users() {
         cancelAction={closeDeleteModal}
         submitAction={removeUser}
         >
-
-
         </DeleteModal>
       )}
+
+        {isShowEditModal && (
+          <EditModal
+          onClose={closeEditModal}
+          onSubmit={updateUser}
+          >
+            {/* child */}
+            <div className='edit-user-info-input-group'>
+                <span>
+                  <AiOutlineDollarCircle />
+                </span>
+                <input type="text" className='edit-user-info-input' value={userNewFirsname} onChange={(event)=> setUserNewFirsname(event.target.value)} placeholder='نام جدید را وارد کنید' />
+            </div>
+            {/* child */}
+            <div className='edit-user-info-input-group'>
+                <span>
+                  <AiOutlineDollarCircle />
+                </span>
+                <input type="text" className='edit-user-info-input' value={userNewLastname} onChange={(event)=> setUserNewLastname(event.target.value)} placeholder='نام خانوادگی جدید را وارد کنید' />
+            </div>
+            {/* child */}
+            <div className='edit-user-info-input-group'>
+                <span>
+                  <AiOutlineDollarCircle />
+                </span>
+                <input type="text" className='edit-user-info-input' value={userNewUsername} onChange={(event)=> setUserNewUsername(event.target.value)} placeholder='نام کاربری جدید را وارد کنید' />
+            </div>
+            {/* child */}
+            <div className='edit-user-info-input-group'>
+                <span>
+                  <AiOutlineDollarCircle />
+                </span>
+                <input type="text" className='edit-user-info-input' value={userNewPassword} onChange={(event)=> setUserNewPassword(event.target.value)} placeholder='رمز عبور جدید را وارد کنید' />
+            </div>
+            {/* child */}
+            <div className='edit-user-info-input-group'>
+                <span>
+                  <AiOutlineDollarCircle />
+                </span>
+                <input type="text" className='edit-user-info-input' value={userNewPhone} onChange={(event)=> setUserNewPhone(event.target.value)} placeholder='شماره تماس جدید را وارد کنید' />
+            </div>
+            {/* child */}
+            <div className='edit-user-info-input-group'>
+                <span>
+                  <AiOutlineDollarCircle />
+                </span>
+                <input type="text" className='edit-user-info-input' value={userNewCity} onChange={(event)=> setUserNewCity(event.target.value)} placeholder='شهر جدید را وارد کنید' />
+            </div>
+            {/* child */}
+            <div className='edit-user-info-input-group'>
+                <span>
+                  <AiOutlineDollarCircle />
+                </span>
+                <input type="text" className='edit-user-info-input' value={userNewEmail} onChange={(event)=> setUserNewEmail(event.target.value)} placeholder='ایمیل جدید را وارد کنید' />
+            </div>
+            {/* child */}
+            <div className='edit-user-info-input-group'>
+                <span>
+                  <AiOutlineDollarCircle />
+                </span>
+                <input type="text" className='edit-user-info-input' value={userNewAddress} onChange={(event)=> setUserNewAddress(event.target.value)} placeholder='آدرس جدید را وارد کنید' />
+            </div>
+            {/* child */}
+            <div className='edit-user-info-input-group'>
+                <span>
+                  <AiOutlineDollarCircle />
+                </span>
+                <input type="text" className='edit-user-info-input' value={userNewScore} onChange={(event)=> setUserNewScore(event.target.value)} placeholder='مقدار جدید را وارد کنید' />
+            </div>
+            {/* child */}
+            <div className='edit-user-info-input-group'>
+                <span>
+                  <AiOutlineDollarCircle />
+                </span>
+                <input type="text" className='edit-user-info-input' value={userNewBuy} onChange={(event)=> setUserNewBuy(event.target.value)} placeholder='مقدار جدید را وارد کنید' />
+            </div>
+          </EditModal>
+        )}
+
 </div>
 
   )
