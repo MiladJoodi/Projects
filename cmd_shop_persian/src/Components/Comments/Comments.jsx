@@ -8,6 +8,7 @@ export default function Comments() {
 
   const [allComments, setAllComments] = useState([])
   const [isShowDetailsModal, setIsShowDetailsModal] = useState(false)
+  const [isShowDeleteModal, setIsShowDeleteModal] = useState(false)
   const [mainCommentBody, setMainCommentBody] = useState('')
 
   useEffect(()=>{
@@ -18,7 +19,12 @@ export default function Comments() {
   },[])
 
   const closeDetailsModal = ()=>setIsShowDetailsModal(false)
-  
+  const closeDeleteModal = () => setIsShowDeleteModal(false)
+
+  const deleteComment = ()=>{
+    console.log('delete');
+    setIsShowDeleteModal(false)
+  }
 
   return (
     <div className='cms-main'>
@@ -50,7 +56,7 @@ export default function Comments() {
       <td>{comment.date}</td>
       <td>{comment.hour}</td>
       <td>
-        <button>حذف</button>
+        <button onClick={()=>setIsShowDeleteModal(true)}>حذف</button>
         <button>ویرایش</button>
         <button>پاسخ</button>
         <button>تایید</button>
@@ -73,6 +79,16 @@ export default function Comments() {
         <p className='text-modal'>{mainCommentBody}</p>
         <button className='text-modal-close-btn' onClick={closeDetailsModal}>بستن</button>
       </DetailsModal>
+    )}
+
+    {isShowDeleteModal && (
+      <DeleteModal
+      cancelAction={closeDeleteModal}
+      submitAction={deleteComment}
+      >
+
+
+      </DeleteModal>
     )}
     
     

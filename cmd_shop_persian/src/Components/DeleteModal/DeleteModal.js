@@ -1,8 +1,22 @@
-import React from "react";
+import React, {useEffect} from "react";
 import ReactDOM from "react-dom";
 import "./DeleteModal.css";
 
   export default function DeleteModal({ submitAction, cancelAction }) {
+
+    useEffect(() => {
+      const checkKey = (event) => {
+          console.log(event);
+        if (event.keyCode === 27) {
+          cancelAction();
+        }
+      };
+  
+      window.addEventListener("keydown", checkKey);
+  
+      return () => window.removeEventListener('keydown', checkKey)
+    });
+
     return ReactDOM.createPortal(
       <div className="modal-parent active">
         <div className="delete-modal">
