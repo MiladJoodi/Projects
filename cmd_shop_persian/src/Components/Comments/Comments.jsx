@@ -36,6 +36,8 @@ export default function Comments() {
 
   const acceptComment = ()=> {
     console.log('accepted');
+    setIsShowAcceptModal(false)
+    
   }
 
   const deleteComment = ()=>{
@@ -110,7 +112,7 @@ export default function Comments() {
           setCommentID(comment.id)
         }}>ویرایش</button>
         <button>پاسخ</button>
-        <button>تایید</button>
+        <button onClick={()=> setIsShowAcceptModal(true)}>تایید</button>
       </td>
     </tr>
         ))
