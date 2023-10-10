@@ -3,6 +3,7 @@ import './Users.css'
 import Errorbox from '../Errorbox/Errorbox'
 import DeleteModal from '../DeleteModal/DeleteModal'
 import EditModal from '../EditModal/EditModal'
+import DetailsModal from "./../DetailsModal/DetailsModal";
 import { AiOutlineDollarCircle } from "react-icons/ai";
 
 
@@ -11,7 +12,9 @@ export default function Users() {
   const [users, setUsers] = useState([])
   const [isShowDeleteModal, setIsShowDeleteModal] = useState(false)
   const [isShowEditModal, setIsShowEditModal] = useState(false)
+  const [isShowDetailsModal, setIsShowDetailsModal] = useState(false)
   const [mainUserID, setMainUserID] = useState(null) 
+  const [mainUserInfos, setMainUserInfos] = useState([])
 
   const [userNewFirsname, setUserNewFirsname] = useState('')
   const [userNewLastname, setUserNewLastname] = useState('')
@@ -36,9 +39,11 @@ export default function Users() {
       setUsers(users)
     })
   }
-
+  
   const closeDeleteModal = ()=> setIsShowDeleteModal(false)
   const closeEditModal = ()=> setIsShowEditModal(false)
+  const closeDetailsModal = ()=> setIsShowDetailsModal(false)
+
 
   const removeUser = ()=>{
     console.log('کاربر ریمو شد');
@@ -55,7 +60,33 @@ export default function Users() {
   const updateUser = (event)=> {
     event.preventDefault()
     console.log('user updated');
-    setIsShowEditModal(false)
+
+    const userNewInfos = {
+      firsname: userNewFirsname,
+      lastname: userNewLastname,
+      username: userNewUsername,
+      password: userNewPassword,
+      phone: userNewPhone,
+      city: userNewCity,
+      email: userNewEmail,
+      address: userNewAddress,
+      score: userNewScore,
+      buy: userNewBuy,
+    }
+
+    fetch(`http://localhost:8000/api/users/${mainUserID}`,{
+      method: 'PUT',
+      headers: {
+        'Content-Type' : 'application/json'
+      },
+      body: JSON.stringify(userNewInfos)
+    }).then(res => res.json())
+    .then(result =>{
+      console.log(result);
+      setIsShowEditModal(false)
+      getAllUsers()
+    })
+
   }
 
   return (
@@ -86,7 +117,10 @@ export default function Users() {
             setIsShowDeleteModal(true)
             setMainUserID(user.id)
           }}>حذف</button>
-          <button>نمایش جزئیات</button>
+          <button onClick={()=>{
+            setMainUserInfos(user)
+            setIsShowDetailsModal(true)
+          }}>نمایش جزئیات</button>
           <button onClick={()=> {
             setIsShowEditModal(true)
             setMainUserID(user.id)
@@ -177,7 +211,7 @@ export default function Users() {
                 <span>
                   <AiOutlineDollarCircle />
                 </span>
-                <input type="text" className='edit-user-info-input' value={userNewAddress} onChange={(event)=> setUserNewAddress(event.target.value)} placeholder='آدرس جدید را وارد کنید' />
+                <textarea type="text" className='edit-user-info-input' value={userNewAddress} onChange={(event)=> setUserNewAddress(event.target.value)} placeholder='آدرس جدید را وارد کنید'></textarea>
             </div>
             {/* child */}
             <div className='edit-user-info-input-group'>
@@ -194,6 +228,32 @@ export default function Users() {
                 <input type="text" className='edit-user-info-input' value={userNewBuy} onChange={(event)=> setUserNewBuy(event.target.value)} placeholder='مقدار جدید را وارد کنید' />
             </div>
           </EditModal>
+        )}
+
+        {isShowDetailsModal && (
+          <DetailsModal
+          onHide={closeDetailsModal}
+          >
+            <table className="cms-table">
+          <thead>
+            <tr>
+              <th>شهر کاربر</th>
+              <th>آدرس کاربر</th>
+              <th>امتیاز کاربر</th>
+              <th>میزان خرید</th>
+            </tr>
+          </thead>
+
+          <tbody>
+            <tr>
+              <td>{mainUserInfos.city}</td>
+              <td>{mainUserInfos.address}</td>
+              <td>{mainUserInfos.score}</td>
+              <td>{mainUserInfos.buy}</td>
+            </tr>
+          </tbody>
+        </table>
+          </DetailsModal>
         )}
 
 </div>
