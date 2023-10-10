@@ -156,6 +156,7 @@ const [productNewColors,setProductNewColors] = useState("")
         <DeleteModal
           submitAction={deleteModalSubmitAction}
           cancelAction={deleteModalCancelAction}
+          title="آیا از حذف اطمینان دارید؟"
         />
       )}
       {isShowDetailsModal && <DetailsModal onHide={closeDetailsModal}>
