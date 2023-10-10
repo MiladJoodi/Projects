@@ -1,47 +1,80 @@
 import React, { useEffect, useState } from 'react'
 import DeleteModal from '../DeleteModal/DeleteModal'
 import ErrorBox from '../Errorbox/Errorbox'
+import DetailsModal from '../DetailsModal/DetailsModal'
+import './Comments.css'
 
 export default function Comments() {
 
   const [allComments, setAllComments] = useState([])
+  const [isShowDetailsModal, setIsShowDetailsModal] = useState(false)
+  const [mainCommentBody, setMainCommentBody] = useState('')
 
   useEffect(()=>{
     fetch('http://localhost:8000/api/comments/')
     .then(res=> res.json())
-    .then(commnets => {
-      console.log(commnets);
-    })
+    .then(comments => setAllComments(comments)
+    )
   },[])
+
+  const closeDetailsModal = ()=>setIsShowDetailsModal(false)
+  
 
   return (
     <div className='cms-main'>
-    <ErrorBox msg="هیچ کامنتی یافت نشد" />
+
+    {allComments.length>0 ? (
+      <table className='cms-table'>
+      <thead>
+    <tr>
+      <th>اسم کاربر</th>
+      <th>محصول</th>
+      <th>کامنت</th>
+      <th>تاریخ</th>
+      <th>ساعت</th>
+    </tr>
+      </thead>
+
+    <tbody>
+      {
+        allComments.map(comment=>(
+          <tr>
+      <td>{comment.userID}</td>
+      <td>{comment.productID}</td>
+      <td><button onClick={()=>{
+        setMainCommentBody(comment.body)
+        setIsShowDetailsModal(true)
+      }
+
+      }>دیدن متن</button></td>
+      <td>{comment.date}</td>
+      <td>{comment.hour}</td>
+      <td>
+        <button>حذف</button>
+        <button>ویرایش</button>
+        <button>پاسخ</button>
+        <button>تایید</button>
+      </td>
+    </tr>
+        ))
+      }
     
-    <table className='cms-table'>
-      <tr>
-        <th>اسم کاربر</th>
-        <th>محصول</th>
-        <th>کامنت</th>
-        <th>تاریخ</th>
-        <th>ساعت</th>
-      </tr>
+    </tbody>
 
-      <tr>
-        <td>علی</td>
-        <td>آیفون 13</td>
-        <td><button>دیدن متن</button></td>
-        <td>1401-01-08</td>
-        <td>14:12</td>
-        <td>
-          <button>حذف</button>
-          <button>ویرایش</button>
-          <button>پاسخ</button>
-          <button>تایید</button>
-        </td>
-      </tr>
-
-    </table>
+  </table>
+    ) : (
+    <ErrorBox msg="هیچ کامنتی یافت نشد" />
+    )}
+    
+    {isShowDetailsModal && (
+      <DetailsModal
+      onHide={closeDetailsModal}
+      >
+        <p className='text-modal'>{mainCommentBody}</p>
+        <button className='text-modal-close-btn' onClick={closeDetailsModal}>بستن</button>
+      </DetailsModal>
+    )}
+    
     
     </div>
   )
