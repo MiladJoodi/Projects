@@ -7,8 +7,9 @@ export default function AddNewProduct() {
         <h1 className='add-product-title'>افزودن محصول جدید</h1>
         {/* add product form */}
         <form action="#" className='add-product-form'>
-            {/* item */}
-            <div className='add-product-form-group'>
+           <div className='add-product-form-wrapper'>
+             {/* item */}
+             <div className='add-product-form-group'>
                 <input type="text" placeholder='نام محصول را وارد کنید' className='add-product-input' />
             </div>
             {/* item */}
@@ -35,6 +36,8 @@ export default function AddNewProduct() {
             <div className='add-product-form-group'>
                 <input type="text" placeholder='نام محصول را وارد کنید' className='add-product-input' />
             </div>
+            <button className='add-product-form-btn'>افزودن محصول</button>
+           </div>
         </form>
     </div>
   )

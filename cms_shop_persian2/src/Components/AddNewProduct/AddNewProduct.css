@@ -1,7 +1,8 @@
 .add-product{
     margin-top: 50px;
+
 }
-.add-product-form{
+.add-product-form-wrapper{
     display: grid;
     grid-template-columns: 1fr 1fr;
     background-color: var(--white);
@@ -10,14 +11,17 @@
     column-gap: 25px;
     /* gap: 25px; */
     row-gap: 10px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
 }
 .add-product-title{
     font-size: 1.5rem;
+    margin-bottom: 25px;
 }
 .add-product-form-group{
-    background-color: rgba(209, 209, 209, 0.322);
+    background-color: rgba(209, 209, 209, 0.164);
     border-radius: 10px;
     border: 1px solid rgba(128, 128, 128, 0.164);
+    
 }
 .add-product-form-group input{
     width: 100%;
@@ -28,4 +32,18 @@
     border:none;
     padding: 5px 10px;
     font-size: 1.2rem;
+}
+.add-product-form-btn{
+    grid-column: 1 / span 2;
+    padding: 5px 10px;
+    height: 55px;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    font-size: 1.3rem;
+    background-color: var(--blue);
+    color: var(--white);
+    margin-top: 25px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
+    cursor: pointer;
 }
