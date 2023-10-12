@@ -1,8 +1,10 @@
 import React from 'react'
 import './Orders.css'
+import ErrorBox from '../ErrorBox/ErrorBox'
+
 
 export default function Orders() {
   return (
-    <div>Orders</div>
+    <ErrorBox mgs="هیچ سفارشی یافت نشد" />
   )
 }

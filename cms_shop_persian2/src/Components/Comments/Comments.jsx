@@ -1,9 +1,12 @@
 import React from 'react'
 import './Comments.css'
+import ErrorBox from '../ErrorBox/ErrorBox'
+
+    
 
 export default function Comments() {
   return (
-    <div>Comments</div>
+    <ErrorBox mgs="هیچ نظری یافت نشد" />
   )
 }
 

@@ -1,0 +1,31 @@
+.add-product{
+    margin-top: 50px;
+}
+.add-product-form{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    background-color: var(--white);
+    border-radius: 20px;
+    padding: 20px;
+    column-gap: 25px;
+    /* gap: 25px; */
+    row-gap: 10px;
+}
+.add-product-title{
+    font-size: 1.5rem;
+}
+.add-product-form-group{
+    background-color: rgba(209, 209, 209, 0.322);
+    border-radius: 10px;
+    border: 1px solid rgba(128, 128, 128, 0.164);
+}
+.add-product-form-group input{
+    width: 100%;
+    height: 40px;
+    font-size: 1.2rem;
+    background-color: unset;
+    outline: none;
+    border:none;
+    padding: 5px 10px;
+    font-size: 1.2rem;
+}

@@ -2,8 +2,13 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    /* background-color: var(--white); */
-width: 150%;
+    background-color: var(--white);
+    padding: 5px 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+/* width: 150%; */
+box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
+
 }
 .header-icons{
     display: flex;
@@ -62,7 +67,8 @@ width: 150%;
     align-items: center;
     justify-content: space-between;
     padding: 0 5px 0 5px;
-    box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    /* box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px; */
 
 }
 .search-box input{
