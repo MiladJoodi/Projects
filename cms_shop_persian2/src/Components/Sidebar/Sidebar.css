@@ -17,13 +17,12 @@
 .sidebar-links{
     margin-top: 20px;
 }
-.sidebar-links li{
+.sidebar-links a{
     position: relative;
     padding: 15px;
 
 }
-.sidebar-links li a{
-    width: 100%;
+.sidebar-links a{
     color: var(--white);
     text-decoration: none;
     display: flex;
@@ -34,7 +33,7 @@
 .sidebar-icon{
     margin-left: 8px;
 }
-.sidebar-links li.active{
+.sidebar-links a.active{
     background-color: rgba(255, 255, 255, 0.2);
     border-bottom-left-radius: 20px;
     border-top-left-radius: 20px;

@@ -1,6 +1,8 @@
 import React from 'react'
 import './Sidebar.css'
 import { FcHome, FcShop, FcComments, FcManager, FcInTransit, FcPaid } from "react-icons/fc";
+import { Link } from 'react-router-dom'
+import { NavLink } from "react-router-dom";
 
 
 export default function Sidebar() {
@@ -9,42 +11,30 @@ export default function Sidebar() {
         <h1 className='sidebar-title'>به پنل کاربری خوش آمدید</h1>
 
         <ul className='sidebar-links'>
-            <li className='sidebar-link'>
-                <a href="#">
+                <NavLink to="/">
                     <FcHome className='sidebar-icon'/>
                     صفحه اصلی
-                </a>
-            </li>
-            <li className='sidebar-link active'>
-                <a href="#">
+                </NavLink>
+                <NavLink to="/products">
                     <FcShop className='sidebar-icon'/>
                     محصولات
-                </a>
-            </li>
-            <li className='sidebar-link'>
-                <a href="#">
+                </NavLink>
+                <NavLink to="/comments">
                 <FcComments className='sidebar-icon'/>
                     نظرات
-                </a>
-            </li>
-            <li className='sidebar-link'>
-                <a href="#">
+                </NavLink>
+                <NavLink to="/users">
                 <FcManager className='sidebar-icon'/>
                 کاربران
-                </a>
-            </li>
-            <li className='sidebar-link'>
-                <a href="#"> 
+                </NavLink>
+                <NavLink to="/orders"> 
                 <FcInTransit className='sidebar-icon'/>
                 سفارش
-                </a>
-            </li>
-            <li className='sidebar-link'>
-                <a href="#">
+                </NavLink>
+                <NavLink to="offs">
                 <FcPaid className='sidebar-icon'/>
                 تخفیف
-                </a>
-            </li>
+                </NavLink>
         </ul>
     </div>
   )
