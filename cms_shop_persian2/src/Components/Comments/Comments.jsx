@@ -12,6 +12,7 @@ export default function Comments() {
   const [isShowDetailsModal,setIsShowDetailsModal] = useState(false)
   const [isShowDeleteModal,setIsShowDeleteModal] = useState(false)
   const [isShowEditModal,setIsShowEditModal] = useState(false)
+  const [isShowAcceptModal, setIsShowAcceptModal] = useState(false)
   const [mainCommentBody,setMainCommentBody] = useState('')
   const [commentID, setCommentID] = useState(null)
 
@@ -40,6 +41,10 @@ export default function Comments() {
     setIsShowEditModal(false)
   }
 
+  const closeAcceptModal= ()=>{
+    setIsShowAcceptModal(false)
+  }
+
   const deleteComment = ()=>{
     fetch(`http://localhost:8000/api/comments/${commentID}`,{
       method: 'DELETE'
@@ -57,8 +62,30 @@ export default function Comments() {
 
   const updateComment = (event)=>{
     event.preventDefault()
-    console.log('Edited');
-    closeEditModal()
+
+
+    fetch(`http://localhost:8000/api/comments/${commentID}`,{
+      method: 'PUT',
+      headers:{
+        'Content-Type' : 'application/json'
+      },
+      body: JSON.stringify({
+        body: mainCommentBody
+      })
+    }).then(res=> res.json())
+    .then(result=>{
+      console.log(result);
+      closeEditModal()
+      getAllComments()
+      toast.success('ویرایش شد', {
+        toastId: 'success1',
+    })
+    })
+  }
+
+  const acceptComment = ()=>{
+    console.log('accepted');
+    setIsShowAcceptModal(false)
   }
 
 
@@ -79,7 +106,7 @@ export default function Comments() {
         {allCommnets.map(comment=> (
           <tr key={comment.id}>
           <td>{comment.userID}</td>
-          <td>{comment.userID}</td>
+          <td>{comment.productID}</td>
           <td><button onClick={()=>{
             setMainCommentBody(comment.body)
             setIsShowDetailsModal(true)
@@ -94,9 +121,12 @@ export default function Comments() {
             <button onClick={()=>{
               setIsShowEditModal(true)
               setMainCommentBody(comment.body)
+              setCommentID(comment.id)
             }}>ویرایش</button>
             <button>پاسخ</button>
-            <button>تایید</button>
+            <button onClick={()=>{
+              setIsShowAcceptModal(true)
+            }}>تایید</button>
           </td>
         </tr>
         ))}
@@ -119,6 +149,7 @@ export default function Comments() {
 
       {isShowDeleteModal && (
         <DeleteModal
+        title='آیاد از حذف نظر اطمینان دارید؟'
         cancelAction={closeDeleteModal}
         submitAction={deleteComment}
         >
@@ -129,13 +160,23 @@ export default function Comments() {
       
       {isShowEditModal && (
         <EditModal
-        onClose={setIsShowEditModal}
+        onClose={closeEditModal}
         onSubmit={updateComment}
         >
           <textarea style={{fontSize: '1.2rem'}} value={mainCommentBody} onChange={(event)=> setMainCommentBody(event.target.value)}>
             
           </textarea>
         </EditModal>
+      )}
+
+      {isShowAcceptModal && (
+        <DeleteModal
+        title='آیا از تایید نظر اطمینان دارید؟'
+        cancelAction={closeAcceptModal}
+        submitAction={acceptComment}
+        >
+
+        </DeleteModal>
       )}
     </div>
   );

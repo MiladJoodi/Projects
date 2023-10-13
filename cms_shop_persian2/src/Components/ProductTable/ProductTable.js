@@ -125,7 +125,10 @@ export default function ProductTable({allProducts, getAllProducts}) {
         </tbody>
       </table>):(<ErrorBox msg='محصولی یافت نشد' />)}
       
-      {isShowDeleteModal && <DeleteModal cancelAction={deleteModalCancelAction} submitAction={deleteModalSubmitAction} />}
+      {isShowDeleteModal && <DeleteModal
+      title='آیا از حذف اطمینان دارید؟'
+      cancelAction={deleteModalCancelAction}
+      submitAction={deleteModalSubmitAction} />}
       {isShowDetailsModal && 
       <DetailsModal
       onHide={closeDetailsModal}
