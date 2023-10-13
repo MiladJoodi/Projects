@@ -4,9 +4,12 @@
     padding: 30px;
     background-color: var(--white);
     text-align: center;
+    display: flex;
+    flex-direction: column;
 }
 .edit-modal-form h1{
     font-size: 1.4rem;
+    margin-bottom: 35px;
 }
 .edit-form-submit{
     padding: 10px 15px;
