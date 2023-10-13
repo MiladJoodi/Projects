@@ -1,20 +1,39 @@
 .text-modal {
-    width: 400px;
-    padding: 25px;
+    /* width: 400px; */
+    /* padding: 25px; */
     background-color: var(--white);
-    line-height: 25px;
+    /* line-height: 25px; */
     text-align: justify;
+    border-radius: 15px;
   }
   
   .text-modal-close-btn {
-    width: 100%;
+    width: 100px;
     padding: 10px 0;
     background-color: var(--blue);
     color: var(--white);
-    margin-top: 20px;
+    margin-top: 55px;
     font-size: 1.1rem;
+    outline: none;
+    border: none;
+    border-radius: 15px;
+    box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
+    align-self: end;
+    cursor: pointer;
   }
   .comment-btn-group{
     display: flex;
     justify-content: left;
+  }
+  .comment-body-container{
+    width: 400px;
+    padding: 25px;
+    background-color: var(--white);
+    /* line-height: 25px; */
+    text-align: justify;
+    display: flex;
+    flex-direction: column;
+  }
+  .Toastify__toast-body{
+    font-family: 'Lalezar';
   }
