@@ -7,12 +7,11 @@ import ErrorBox from '../ErrorBox/ErrorBox'
 
 import {FcEditImage, FcLike, FcMiddleBattery, FcMoneyTransfer,FcBarChart,FcLandscape, FcMindMap} from 'react-icons/fc'
 
-export default function ProductTable() {
+export default function ProductTable({allProducts, getAllProducts}) {
 
   const [isShowDeleteModal, setIsShowDeleteModal] = useState(false)
   const [isShowDetailsModal, setIsShowDetailsModal] = useState(false)
   const [isShowEditModal, setIsShowEditModal] = useState(false)
-  const [allProducts, setAllProducts] = useState([])
   const [mainProductInfos, setMainproductInfos] = useState({})
   const [productID, setProductID] = useState(null)
 
@@ -25,18 +24,7 @@ export default function ProductTable() {
   const [productNewColors,setProductNewColors] = useState('')
 
 
-  useEffect(()=>{
-    getAllProducts()
-  },[])
 
-function getAllProducts(){
-  fetch('http://localhost:8000/api/products/')
-  .then(res=> res.json())
-  .then(result=> {
-    console.log(result);
-    setAllProducts(result)
-  })
-}
 
 
   const deleteModalCancelAction = ()=>{
@@ -64,7 +52,29 @@ function getAllProducts(){
   const updateProductInfos = (event)=>{
     event.preventDefault()
     setIsShowEditModal(false)
-    console.log('ویرایش انجام شد');
+    
+    const updatedProduct = {
+      title: productNewTitle,
+      price: productNewPrice,
+      count: productNewCount,
+      img: productNewImg,
+      popularity: productNewPopularity,
+      sale: productNewSale,
+      colors: productNewColors,
+    }
+
+    fetch(`http://localhost:8000/api/products/${productID}`,{
+      method: 'PUT',
+      headers: {
+        'Content-Type': 'application/json'
+      },
+      body: JSON.stringify(updatedProduct)
+    }).then(res => res.json())
+    .then(result=> {
+      console.log(result);
+      getAllProducts()
+    })
+
   }
   
 
@@ -81,7 +91,7 @@ function getAllProducts(){
         </thead>
         <tbody>
           {allProducts.map(product=> (
-             <tr className='product-table-row'>
+             <tr className='product-table-row' key={product.id}>
             <td>
                 <img src={product.img} className='product-table-img' />
             </td>
@@ -99,6 +109,7 @@ function getAllProducts(){
                 }}>حذف</button>
                 <button className='product-table-btn' onClick={()=>{
                   setIsShowEditModal(true)
+                  setProductID(product.id)
                   setProductNewTitle(product.title)
                   setProductNewPrice(product.price)
                   setProductNewCount(product.count)
@@ -119,7 +130,7 @@ function getAllProducts(){
       <DetailsModal
       onHide={closeDetailsModal}
       >
-        <table className='cms-table'>
+        <table className='cms-table cms-table-60'>
            <thead>
            <tr>
                 <th>اسم</th>
@@ -146,49 +157,49 @@ function getAllProducts(){
               <span>
                 <FcEditImage />
               </span>
-              <input type="text" placeholder='اسم جدید را وارد کنید' className='edit-product-input' value={productNewTitle} onChange={setProductNewTitle} />
+              <input type="text" placeholder='اسم جدید را وارد کنید' className='edit-product-input' value={productNewTitle} onChange={(event)=> setProductNewTitle(event.target.value)} />
           </div>
           {/* item */}
           <div className='edit-product-form-group'>
               <span>
                 <FcMoneyTransfer />
               </span>
-              <input type="text" placeholder='قیمت جدید را وارد کنید' className='edit-product-input' value={productNewPrice} onChange={setProductNewPrice} />
+              <input type="text" placeholder='قیمت جدید را وارد کنید' className='edit-product-input' value={productNewPrice} onChange={(event)=> setProductNewPrice(event.target.value)} />
           </div>
           {/* item */}
           <div className='edit-product-form-group'>
               <span>
                 <FcMiddleBattery />
               </span>
-              <input type="text" placeholder='موجودی جدید را وارد کنید' className='edit-product-input' value={productNewCount} onChange={setProductNewCount} />
+              <input type="text" placeholder='موجودی جدید را وارد کنید' className='edit-product-input' value={productNewCount} onChange={(event)=> setProductNewCount(event.target.value)} />
           </div>
           {/* item */}
           <div className='edit-product-form-group'>
               <span>
               <FcLandscape />
               </span>
-              <input type="text" placeholder='عکس جدید را وارد کنید' className='edit-product-input' value={productNewImg} onChange={setProductNewImg} />
+              <input type="text" placeholder='عکس جدید را وارد کنید' className='edit-product-input' value={productNewImg} onChange={(event)=> setProductNewImg(event.target.value)} />
           </div>
           {/* item */}
           <div className='edit-product-form-group'>
               <span>
               <FcLike />
               </span>
-              <input type="text" placeholder='محبوبیت جدید را وارد کنید' className='edit-product-input' value={productNewPopularity} onChange={setProductNewPopularity} />
+              <input type="text" placeholder='محبوبیت جدید را وارد کنید' className='edit-product-input' value={productNewPopularity} onChange={(event)=> setProductNewPopularity(event.target.value)} />
           </div>
           {/* item */}
           <div className='edit-product-form-group'>
               <span>
               <FcBarChart />
               </span>
-              <input type="text" placeholder='میزان فروش جدید را وارد کنید' className='edit-product-input' value={productNewSale} onChange={setProductNewSale} />
+              <input type="text" placeholder='میزان فروش جدید را وارد کنید' className='edit-product-input' value={productNewSale} onChange={(event)=> setProductNewSale(event.target.value)} />
           </div>
           {/* item */}
           <div className='edit-product-form-group'>
               <span>
               <FcMindMap />
               </span>
-              <input type="text" placeholder='تعداد رنگ بندی جدید را وارد کنید' className='edit-product-input' value={productNewColors} onChange={setProductNewColors} />
+              <input type="text" placeholder='تعداد رنگ بندی جدید را وارد کنید' className='edit-product-input' value={productNewColors} onChange={(event)=> setProductNewColors(event.target.value)} />
           </div>
         
         </EditModal>

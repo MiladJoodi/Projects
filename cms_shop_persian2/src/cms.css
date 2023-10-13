@@ -13,21 +13,43 @@
     opacity: 0;
     visibility: hidden;
     transition: 0.4s;
-    overflow: scroll;
 }
-.modal-parent.active{
+
+.modal-parent.active {
     opacity: 1;
     visibility: visible;
 }
-.cms-table{
+
+.cms-main {
+    margin-top: 60px;
+    padding: 20px;
+    border-radius: 25px;
+}
+
+.cms-table {
     margin-top: 20px;
-    width: 60%;
+    width: 100%;
     border-radius: 10px;
     background-color: var(--white);
 }
-.cms-table tr{
+
+.cms-table tr {
     text-align: center;
 }
-.cms-table th, .cms-table td{
+
+.cms-table th, .cms-table td {
     padding: 20px;
+}
+
+.cms-table button {
+    padding: 5px 10px;
+    border-radius: 15px;
+    border: none;
+    outline: none;
+    margin-left: 5px;
+    font-size: 1.1rem;
+    background-color: var(--blue);
+    color: var(--white);
+    cursor: pointer;
+    box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
 }
