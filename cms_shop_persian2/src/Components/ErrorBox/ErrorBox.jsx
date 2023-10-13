@@ -1,10 +1,10 @@
 import React from 'react';
 import './ErrorBox.css';
 
-export default function ErrorBox({mgs}) {
+export default function ErrorBox({msg}) {
   return (
     <div className='empty-error'>
-        <h1>{mgs}</h1>
+        <h1>{msg}</h1>
     </div>
   )
 }

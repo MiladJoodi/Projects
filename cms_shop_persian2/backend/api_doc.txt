@@ -1,0 +1,140 @@
+main url = http://localhost:3000/api/
+
+
+///////////////////// Start Products Routes (sub_url => products/) //////////////////////
+
+1. Get all products
+    method => get
+    res => all products array
+
+2. Delete Main Product
+    method => Delete
+    req param => productID => Products ID
+
+3. Update Main Product
+    method => Put
+    req param => productID => Products ID
+    req body => {
+        title => عنوان محصول
+        price => مبلغ محصول
+        count => موجودی محصول
+        img => آدرس کاور محصول
+        popularity => میزان محبوبیت محصول
+        sale => میزان فروش
+        colors => تعداد رنگ بندی
+    }
+
+4. Add new Product
+    method => Post
+    req body => {
+        title => عنوان محصول
+        price => مبلغ محصول
+        count => موجودی محصول
+        img => آدرس کاور محصول
+        popularity => میزان محبوبیت محصول
+        sale => میزان فروش
+        colors => تعداد رنگ بندی
+    }
+
+///////////////////// Finish Products Routes (sub_url => products/) //////////////////////
+
+
+
+///////////////////// Start comments Routes (sub_url => comments/) //////////////////////
+
+1. Get all comments
+    method => Get
+    res => all comments array
+
+2. Delete Main Comment
+    method => Delete
+    req param => commentId => Comment ID
+
+3. Update Main Comment (Body)
+    method => Put
+    req param => commentId => Comment ID
+    req body => {
+        body => محتوای جدید کامنت
+    }
+
+///////////////////// Finish comments Routes (sub_url => comments/) //////////////////////
+
+
+
+///////////////////// Start Users Routes (sub_url => users/) //////////////////////
+
+1. Get all users
+    method => Get
+    res => all users array
+
+2. Delete Main User
+    method => Delete
+    req param => userID => User ID
+
+3. Update Main User
+    method => Put
+    req param => userID => User ID
+    req body => {
+        firsname => نام کاربر
+        lastname => نام خانوادگی کاربر
+        username => نام کاربری
+        password => پسورد کاربر
+        phone => شماره تماس کاربر
+        city => محل زندگی کهربر - شهر
+        email => ایمیل کاربر
+        address => آدرس کاربر
+        score =>‌امیتیاز کاربر در سایت
+        buy => میزان خرید کاربر
+    }
+
+///////////////////// Finish Users Routes (sub_url => users/) //////////////////////
+
+
+
+///////////////////// Start Orders Routes (sub_url => orders/) //////////////////////
+
+1. Get all Orders
+    method => Get
+    res => all orders array
+
+2. Delete Main Order
+    method => Delete
+    req param => orderID => Order ID
+
+3. Update Main Order
+    method => Put
+    sub_url => /active-order
+    req param => orderID => Order ID
+    req param => isActive (0 OR 1) => Reject / Accept Order
+
+///////////////////// Finish Orders Routes (sub_url => orders/) //////////////////////
+
+
+
+///////////////////// Start Offs Routes (sub_url => offs/) //////////////////////
+
+1. Get all Offs
+    method => Get
+    res => all offs array
+
+2. Delete Main Off
+    method => Delete
+    req param => offID => Off ID
+
+3. Accept / Reject Main Off Code
+    method => Put
+    sub_url => /active-off
+    req param => offID => Off ID
+    req param => isActive (0 OR 1) => Reject / Accept Off
+
+///////////////////// Finish Offs Routes (sub_url => offs/) //////////////////////
+
+
+
+///////////////////// Start Admins Routes (sub_url => admins/) //////////////////////
+
+1. Get Main Admin Info
+    method => Get
+    req header => authorization => Admin Token
+
+///////////////////// Finish Admins Routes (sub_url => admins/) //////////////////////

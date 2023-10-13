@@ -8,7 +8,7 @@ import DeleteModal from '../DeleteModal/DeleteModal'
 export default function Products() {
   return (
     <>
-    <ErrorBox mgs="هیچ محصولی یافت نشد" />
+    {/* <ErrorBox mgs="هیچ محصولی یافت نشد" /> */}
     <AddNewProduct />
     <ProductTable />
     {/* <DeleteModal /> */}
