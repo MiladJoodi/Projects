@@ -8,7 +8,7 @@ export default function Comments() {
   return (
     <>
     <ErrorBox mgs="هیچ نظری یافت نشد" />
-    <DeleteModal />
+    {/* <DeleteModal /> */}
     </>
   )
 }

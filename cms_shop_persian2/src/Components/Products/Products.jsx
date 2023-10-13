@@ -3,6 +3,7 @@ import './Products.css'
 import ErrorBox from '../ErrorBox/ErrorBox'
 import AddNewProduct from '../AddNewProduct/AddNewProduct'
 import ProductTable from '../ProductTable/ProductTable'
+import DeleteModal from '../DeleteModal/DeleteModal'
 
 export default function Products() {
   return (
@@ -10,6 +11,7 @@ export default function Products() {
     <ErrorBox mgs="هیچ محصولی یافت نشد" />
     <AddNewProduct />
     <ProductTable />
+    {/* <DeleteModal /> */}
     </>
   )
 }
