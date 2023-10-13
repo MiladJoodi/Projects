@@ -5,7 +5,7 @@ import DetailsModal from '../DetailsModal/DetailsModal'
 import EditModal from '../EditModal/EditModal'
 import ErrorBox from '../ErrorBox/ErrorBox'
 
-import {FcEditImage, FcLike, FcMiddleBattery, FcMoneyTransfer} from 'react-icons/fc'
+import {FcEditImage, FcLike, FcMiddleBattery, FcMoneyTransfer,FcBarChart,FcLandscape, FcMindMap} from 'react-icons/fc'
 
 export default function ProductTable() {
 
@@ -13,6 +13,17 @@ export default function ProductTable() {
   const [isShowDetailsModal, setIsShowDetailsModal] = useState(false)
   const [isShowEditModal, setIsShowEditModal] = useState(false)
   const [allProducts, setAllProducts] = useState([])
+  const [mainProductInfos, setMainproductInfos] = useState({})
+  const [productID, setProductID] = useState(null)
+
+  const [productNewTitle,setProductNewTitle] = useState('')
+  const [productNewPrice,setProductNewPrice] = useState('')
+  const [productNewCount,setProductNewCount] = useState('')
+  const [productNewImg,setProductNewImg] = useState('')
+  const [productNewPopularity,setProductNewPopularity] = useState('')
+  const [productNewSale,setProductNewSale] = useState('')
+  const [productNewColors,setProductNewColors] = useState('')
+
 
   useEffect(()=>{
     getAllProducts()
@@ -32,8 +43,17 @@ function getAllProducts(){
     setIsShowDeleteModal(false)
   }
 
-  const deleteModalSubmitAction = ()=>{
+  const deleteModalSubmitAction = (event)=>{
     setIsShowDeleteModal(false)
+
+    fetch(`http://localhost:8000/api/products/${productID}`,{
+      method: 'DELETE'
+    }).then(res=> res.json())
+    .then(result=> {
+      console.log(result);
+      getAllProducts()
+    })
+
   }
 
   const closeDetailsModal = ()=>{
@@ -43,6 +63,7 @@ function getAllProducts(){
 
   const updateProductInfos = (event)=>{
     event.preventDefault()
+    setIsShowEditModal(false)
     console.log('ویرایش انجام شد');
   }
   
@@ -70,12 +91,21 @@ function getAllProducts(){
             <td>
                 <button className='product-table-btn' onClick={()=>{
                   setIsShowDetailsModal(true)
+                  setMainproductInfos(product)
                 }}>جزئیات</button>
                 <button className='product-table-btn' onClick={()=>{
+                  setProductID(product.id)
                   setIsShowDeleteModal(true)
                 }}>حذف</button>
                 <button className='product-table-btn' onClick={()=>{
                   setIsShowEditModal(true)
+                  setProductNewTitle(product.title)
+                  setProductNewPrice(product.price)
+                  setProductNewCount(product.count)
+                  setProductNewImg(product.img)
+                  setProductNewPopularity(product.popularity)
+                  setProductNewSale(product.sale)
+                  setProductNewColors(product.colors)
                 }}>ویرایش</button>
             </td>
           </tr>
@@ -85,7 +115,27 @@ function getAllProducts(){
       </table>):(<ErrorBox msg='محصولی یافت نشد' />)}
       
       {isShowDeleteModal && <DeleteModal cancelAction={deleteModalCancelAction} submitAction={deleteModalSubmitAction} />}
-      {isShowDetailsModal && <DetailsModal onHide={closeDetailsModal} />}
+      {isShowDetailsModal && 
+      <DetailsModal
+      onHide={closeDetailsModal}
+      >
+        <table className='cms-table'>
+           <thead>
+           <tr>
+                <th>اسم</th>
+                <th>فروش</th>
+                <th>رنگ بندی</th>
+            </tr>
+           </thead>
+           <tbody>
+            <tr>
+                <td>{mainProductInfos.title}</td>
+                <td>{mainProductInfos.sale.toLocaleString()}</td>
+                <td>{mainProductInfos.colors}</td>
+            </tr>
+           </tbody>
+        </table>
+        </DetailsModal>}
       {isShowEditModal && (
         <EditModal
         onClose={()=> setIsShowEditModal(false)}
@@ -96,28 +146,49 @@ function getAllProducts(){
               <span>
                 <FcEditImage />
               </span>
-              <input type="text" placeholder='اسم جدید را وارد کنید' className='edit-product-input' />
+              <input type="text" placeholder='اسم جدید را وارد کنید' className='edit-product-input' value={productNewTitle} onChange={setProductNewTitle} />
           </div>
           {/* item */}
           <div className='edit-product-form-group'>
               <span>
                 <FcMoneyTransfer />
               </span>
-              <input type="text" placeholder='قیمت جدید را وارد کنید' className='edit-product-input' />
-          </div>
-          {/* item */}
-          <div className='edit-product-form-group'>
-              <span>
-                <FcLike />
-              </span>
-              <input type="text" placeholder='اسم جدید را وارد کنید' className='edit-product-input' />
+              <input type="text" placeholder='قیمت جدید را وارد کنید' className='edit-product-input' value={productNewPrice} onChange={setProductNewPrice} />
           </div>
           {/* item */}
           <div className='edit-product-form-group'>
               <span>
                 <FcMiddleBattery />
               </span>
-              <input type="text" placeholder='موجودی جدید را وارد کنید' className='edit-product-input' />
+              <input type="text" placeholder='موجودی جدید را وارد کنید' className='edit-product-input' value={productNewCount} onChange={setProductNewCount} />
+          </div>
+          {/* item */}
+          <div className='edit-product-form-group'>
+              <span>
+              <FcLandscape />
+              </span>
+              <input type="text" placeholder='عکس جدید را وارد کنید' className='edit-product-input' value={productNewImg} onChange={setProductNewImg} />
+          </div>
+          {/* item */}
+          <div className='edit-product-form-group'>
+              <span>
+              <FcLike />
+              </span>
+              <input type="text" placeholder='محبوبیت جدید را وارد کنید' className='edit-product-input' value={productNewPopularity} onChange={setProductNewPopularity} />
+          </div>
+          {/* item */}
+          <div className='edit-product-form-group'>
+              <span>
+              <FcBarChart />
+              </span>
+              <input type="text" placeholder='میزان فروش جدید را وارد کنید' className='edit-product-input' value={productNewSale} onChange={setProductNewSale} />
+          </div>
+          {/* item */}
+          <div className='edit-product-form-group'>
+              <span>
+              <FcMindMap />
+              </span>
+              <input type="text" placeholder='تعداد رنگ بندی جدید را وارد کنید' className='edit-product-input' value={productNewColors} onChange={setProductNewColors} />
           </div>
         
         </EditModal>

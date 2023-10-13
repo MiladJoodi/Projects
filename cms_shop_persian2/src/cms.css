@@ -13,6 +13,7 @@
     opacity: 0;
     visibility: hidden;
     transition: 0.4s;
+    overflow: scroll;
 }
 .modal-parent.active{
     opacity: 1;
