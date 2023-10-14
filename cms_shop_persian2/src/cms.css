@@ -18,6 +18,7 @@
 .modal-parent.active {
     opacity: 1;
     visibility: visible;
+    overflow: scroll;
 }
 
 .cms-main {
@@ -26,12 +27,21 @@
     border-radius: 25px;
 }
 
+.cms-title{
+    font-weight: bold;
+    font-size: 1.4rem;
+}
+
 .cms-table {
     margin-top: 20px;
     width: 100%;
     border-radius: 10px;
     background-color: var(--white);
+    box-shadow: rgba(149, 157, 165, 0.2) 0 8px 24px;
 
+}
+.cms-table-60{
+    width: 60% !important;
 }
 
 .cms-table tr {

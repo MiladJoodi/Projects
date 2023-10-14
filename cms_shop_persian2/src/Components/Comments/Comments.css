@@ -25,6 +25,9 @@
     display: flex;
     justify-content: left;
   }
+  .comment-btn-group button{
+    width: 65px;
+  }
   .comment-body-container{
     width: 400px;
     padding: 25px;

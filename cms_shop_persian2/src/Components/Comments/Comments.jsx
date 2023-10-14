@@ -13,6 +13,7 @@ export default function Comments() {
   const [isShowDeleteModal,setIsShowDeleteModal] = useState(false)
   const [isShowEditModal,setIsShowEditModal] = useState(false)
   const [isShowAcceptModal, setIsShowAcceptModal] = useState(false)
+  const [isShowRejectModal, setIsShowRejectModal] = useState(false)
   const [mainCommentBody,setMainCommentBody] = useState('')
   const [commentID, setCommentID] = useState(null)
 
@@ -43,6 +44,10 @@ export default function Comments() {
 
   const closeAcceptModal= ()=>{
     setIsShowAcceptModal(false)
+  }
+
+  const closeRejectModal= ()=>{
+    setIsShowRejectModal(false)
   }
 
   const deleteComment = ()=>{
@@ -84,13 +89,34 @@ export default function Comments() {
   }
 
   const acceptComment = ()=>{
-    console.log('accepted');
-    setIsShowAcceptModal(false)
+
+    fetch(`http://localhost:8000/api/comments/accept/${commentID}`,{
+      method: 'POST',
+    }).then(res=> res.json())
+    .then(result=> {
+      console.log('result');
+      setIsShowAcceptModal(false)
+      getAllComments()
+    })
+
+  }
+
+  const rejectComment = ()=>{
+    fetch(`http://localhost:8000/api/comments/reject/${commentID}`,{
+      method: 'POST',
+    }).then(res=> res.json())
+    .then(result=> {
+      console.log(result);
+      closeRejectModal()
+      getAllComments()
+    })
+
   }
 
 
   return (
     <div className="cms-main">
+        <h1 className='cms-title'>نظرات</h1>
       {allCommnets.length ? (
         <table className="cms-table">
         <thead>
@@ -124,9 +150,17 @@ export default function Comments() {
               setCommentID(comment.id)
             }}>ویرایش</button>
             <button>پاسخ</button>
-            <button onClick={()=>{
-              setIsShowAcceptModal(true)
-            }}>تایید</button>
+            {comment.isAccept === 0 ? (
+              <button onClick={()=>{
+                setIsShowAcceptModal(true)
+                setCommentID(comment.id)
+              }}>تایید</button>
+            ):(
+              <button onClick={()=>{
+                setIsShowRejectModal(true)
+                setCommentID(comment.id)
+              }}>رد</button>
+            )}
           </td>
         </tr>
         ))}
@@ -174,6 +208,16 @@ export default function Comments() {
         title='آیا از تایید نظر اطمینان دارید؟'
         cancelAction={closeAcceptModal}
         submitAction={acceptComment}
+        >
+
+        </DeleteModal>
+      )}
+
+      {isShowRejectModal && (
+        <DeleteModal
+        title='آیا از رد نظر اطمینان دارید؟'
+        cancelAction={closeRejectModal}
+        submitAction={rejectComment}
         >
 
         </DeleteModal>
