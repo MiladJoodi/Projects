@@ -1,5 +1,6 @@
-import React from 'react'
+import React, {useContext } from 'react'
 import './Sidebar.css'
+import {Link} from 'react-router-dom'
 
 function Sidebar() {
   return (
@@ -132,13 +133,13 @@ function Sidebar() {
               </ul>
             </li>
             <li className="nav-item has-treeview">
-              <a href="#" className="nav-link">
-                <i className="nav-icon fa fa-edit"></i>
-                <p>
+              <Link to='/forms' className="nav-link">
+              <i className="nav-icon fa fa-edit"></i>
+              <p>
                   فرم‌ها
                   <i className="fa fa-angle-left right"></i>
                 </p>
-              </a>
+              </Link>
               <ul className="nav nav-treeview">
                 <li className="nav-item">
                   <a href="pages/forms/general.html" className="nav-link">

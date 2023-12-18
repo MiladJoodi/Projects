@@ -1,14 +1,22 @@
-import React from 'react'
-import './Home.css'
-import Sidebar from '../../Components/Sidebar/Sidebar'
-import { BrowserRouter, Router, Routes } from 'react-router-dom';
+import React from "react";
+import "./Home.css";
+import SecondDashboard from "../../Components/SecondDashboard";
+import QuickMenu from "../../Components/QuickMenu";
+import MonthlyReport from "../../Components/MonthlyReport";
 
 function Home() {
   return (
-    <div className='home'>
-        <Sidebar />
-    </div>
-  )
+    <div className="content-wrapper">
+      <div className="content-header">
+        <div className="container-fluid">
+          <SecondDashboard />
+          <QuickMenu />
+          <MonthlyReport />
+        </div>
+      </div>
+      </div>
+  );
 }
 
-export default Home
+export default Home;
+
