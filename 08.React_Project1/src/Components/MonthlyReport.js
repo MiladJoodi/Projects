@@ -1,4 +1,7 @@
-import React from 'react'
+import React, { PureComponent } from 'react';
+import { LineChart, Line } from 'recharts';
+import Chart from './Chart';
+
 
 export default function MonthlyReport() {
   return (
@@ -34,12 +37,13 @@ export default function MonthlyReport() {
                 <div className="row">
                   <div className="col-md-8">
                     <p className="text-center">
-                      <strong>فروش ۱ دی ۱۳۹۷</strong>
+                      <strong>فروش 28 دی 1402</strong>
                     </p>
 
                     <div className="chart">
                       {/* <!-- Sales Chart Canvas --> */}
-                      <canvas id="salesChart" height="180" style={{height: "180px"}}></canvas>
+                      <Chart />
+                      {/* <canvas id="acquisitions" height="180" style={{height: "180px"}}></canvas> */}
                     </div>
                     {/* <!-- /.chart-responsive --> */}
                   </div>
