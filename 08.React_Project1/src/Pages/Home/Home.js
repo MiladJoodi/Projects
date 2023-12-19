@@ -3,6 +3,7 @@ import "./Home.css";
 import SecondDashboard from "../../Components/SecondDashboard";
 import QuickMenu from "../../Components/QuickMenu";
 import MonthlyReport from "../../Components/MonthlyReport";
+import Reports from "../../Components/Reports";
 
 function Home() {
   return (
@@ -12,6 +13,7 @@ function Home() {
           <SecondDashboard />
           <QuickMenu />
           <MonthlyReport />
+          <Reports />
         </div>
       </div>
       </div>
