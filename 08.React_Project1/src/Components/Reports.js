@@ -1,6 +1,6 @@
 import React from "react";
 // import WorldMap from "./WorldMap";
-import MapChart from "./MapChart";
+import MapChart from "./MapChart/MapChart";
 
 function Reports() {
   return (
@@ -11,7 +11,7 @@ function Reports() {
         {/* <!-- MAP & BOX PANE --> */}
         <div class="card">
         <div class="card-header">
-                <h3 class="card-title">گزارش بازدیدها</h3>
+                <h3 class="card-title">بازدید هفته جاری</h3>
 
                 <div class="card-tools">
                   <button type="button" class="btn btn-tool" data-widget="collapse">
