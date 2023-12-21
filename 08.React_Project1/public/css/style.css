@@ -8613,6 +8613,7 @@ body,
 }
 
 .main-footer {
+  width: 100%;
   padding: 15px;
   color: #555;
   border-top: 1px solid #dee2e6;
@@ -11130,8 +11131,8 @@ label:not(.form-check-label):not(.custom-file-label) {
 .info-box {
   box-shadow: 0 0 1px rgba(0, 0, 0, 0.125), 0 1px 3px rgba(0, 0, 0, 0.2);
   border-radius: 0.25rem;
-  padding: .5rem;
-  min-height: 80px;
+  /* padding: .rem; */
+  min-height: 10px;
   background: #ffffff;
 }
 

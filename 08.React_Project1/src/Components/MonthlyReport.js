@@ -1,18 +1,43 @@
-import React, { PureComponent } from 'react';
+import React, { PureComponent, useEffect, useRef, useState } from 'react';
 import { LineChart, Line } from 'recharts';
 import Chart from './Chart';
 
 
 export default function MonthlyReport() {
+
+  const [monthlyReport, setMonthlyReport] = useState(true)
+
+const monthly = useRef()
+
+
+const hideMonthly = ()=>{
+setTimeout(() => {
+  document.getElementById('containers').style.height = 0
+}, 1000);
+  // let elHeight = document.getElementById('containers').clientHeight
+  // if(!monthlyReport){
+    // document.getElementById('containers').clientHeight = 0
+  // }
+  
+  // monthly.current.clientHeight = 0
+  // console.log(monthly.current.clientHeight)
+  // elHeight= 0
+  // console.log(monthly.current.height);
+  // setTimeout(() => {
+  //   setMonthlyReport(false)
+  // }, 1000);
+}
+
+
   return (
     <div className="row">
           <div className="col-md-12">
-            <div className="card">
+            <div className={`card ${!monthlyReport && 'd-none'}`} ref={monthly} id='containers'>
               <div className="card-header">
                 <h5 className="card-title">گزارش ماهیانه</h5>
 
                 <div className="card-tools">
-                  <button type="button" className="btn btn-tool" data-widget="collapse">
+                <button className="btn shadow-none " type="button" data-bs-toggle="collapse" data-bs-target="#MonthlyReport" aria-expanded="true" aria-controls="MonthlyReport">
                     <i className="fa fa-minus"></i>
                   </button>
                   <div className="btn-group">
@@ -28,12 +53,13 @@ export default function MonthlyReport() {
                     </div>
                   </div>
                   <button type="button" className="btn btn-tool" data-widget="remove">
-                    <i className="fa fa-times"></i>
+                    <i className="fa fa-times" onClick={hideMonthly}></i>
                   </button>
                 </div>
               </div>
               {/* <!-- /.card-header --> */}
-              <div className="card-body">
+              <div class="collapse show" id="MonthlyReport">
+              <div className="card-body" >
                 <div className="row">
                   <div className="col-md-8">
                     <p className="text-center">
@@ -93,6 +119,8 @@ export default function MonthlyReport() {
                 </div>
                 {/* <!-- /.row --> */}
               </div>
+              </div>
+              
               {/* <!-- ./card-body --> */}
               <div className="card-footer">
                 <div className="row">

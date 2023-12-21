@@ -155,7 +155,7 @@ ul {
 
 
 @media (min-width: 768px) {
-    .content-wrapper, .main-footer, .main-header {
+    .content-wrapper, .main-header {
         transition: margin-right .3s ease-in-out;
         margin-right: 250px;
         margin-left : 0;
@@ -270,4 +270,12 @@ ul {
 
 .datepicker-plot-area {
     font-family: 'Vazir', sans-serif;
+}
+
+/*----------------------------------  Joodi Custom styles ---------------------------------- */
+.btn:focus{
+    /* box-shadow: none; */
+}
+.containers{
+    transition: height 2s ease;
 }
