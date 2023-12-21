@@ -61,7 +61,7 @@ function Chart() {
     return (
         <ComposedChart
           width={800}
-          height={400}
+          height={250}
           data={data}
           margin={{
             top: 20,

@@ -4,6 +4,9 @@ import SecondDashboard from "../../Components/SecondDashboard";
 import QuickMenu from "../../Components/QuickMenu";
 import MonthlyReport from "../../Components/MonthlyReport";
 import Reports from "../../Components/Reports";
+import Chat from "../../Components/Chat";
+import Userlist from "../../Components/Userlist";
+import LastestOrder from "../../Components/LastestOrder";
 
 function Home() {
   return (
@@ -13,12 +16,20 @@ function Home() {
           <SecondDashboard />
           <QuickMenu />
           <MonthlyReport />
-          <Reports />
+          <div className="row">
+            <div class="col-md-8">
+              <Reports />
+              <div className="row">
+                <Chat />
+                <Userlist />
+              </div>
+            <LastestOrder />
+            </div>
+          </div>
         </div>
       </div>
-      </div>
+    </div>
   );
 }
 
 export default Home;
-

@@ -4,11 +4,7 @@ import MapChart from "./MapChart/MapChart";
 
 function Reports() {
   return (
-    // <!-- Main row -->
-    <div class="row">
-      {/* <!-- Left col --> */}
-      <div class="col-md-8">
-        {/* <!-- MAP & BOX PANE --> */}
+
         <div class="card">
         <div class="card-header">
                 <h3 class="card-title">بازدید هفته جاری</h3>
@@ -28,7 +24,6 @@ function Reports() {
                   <div class="p-1 flex-1" style={{overflow: "hidden"}}>
                     {/* <!-- Map will be created here --> */}
                     <MapChart />
-                    <div id="world-map-markers" style={{height: "325px", overflow: "hidden"}} ></div>
                   </div>
                   <div class="card-pane-right bg-success  pt-2 pb-2 pl-4 pr-4">
                     <div class="description-block mb-4">
@@ -54,9 +49,6 @@ function Reports() {
               </div>
               {/* <!-- /.card-body --> */}
             </div>
-            {/* <!-- /.card --> */}
-        </div>
-      </div>
   );
 }
 
