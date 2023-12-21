@@ -11,8 +11,10 @@ const monthly = useRef()
 
 
 const hideMonthly = ()=>{
+  monthly.current.style.height = "0";
+
 setTimeout(() => {
-  document.getElementById('containers').style.height = 0
+  // document.getElementById('containers').style.height = 0
 }, 1000);
   // let elHeight = document.getElementById('containers').clientHeight
   // if(!monthlyReport){
@@ -30,7 +32,6 @@ setTimeout(() => {
 
 
   return (
-    <div className="row">
           <div className="col-md-12">
             <div className={`card ${!monthlyReport && 'd-none'}`} ref={monthly} id='containers'>
               <div className="card-header">
@@ -166,8 +167,6 @@ setTimeout(() => {
             </div>
             {/* <!-- /.card --> */}
           </div>
-          {/* <!-- /.col --> */}
-        </div>
-        // <!-- /.row -->
+
   )
 }

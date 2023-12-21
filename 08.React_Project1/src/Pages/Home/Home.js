@@ -27,7 +27,7 @@ function Home() {
         <div className="container-fluid">
           <QuickMenu />
           <MonthlyReport />
-        </div>
+
 
 
       <div className="row">
@@ -44,6 +44,7 @@ function Home() {
           <Browser />
           <NewProductList />
         </div>
+      </div>
       </div>
       </section>
       <Footer />
