@@ -1,4 +1,4 @@
-## SHop Landing Page
+## Shop Landing Page
    
 
 
